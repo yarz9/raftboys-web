@@ -19,7 +19,7 @@ export function Booking() {
   const t = useT()
   const [state, setState] = useState({
     name: '', email: '', phone: '', date: '',
-    package: 'classic', group: 2, dietary: '', message: '', consent: false,
+    package: 'rafting', group: 2, dietary: '', message: '', consent: false,
   })
   const [errors, setErrors] = useState({})
   const [sending, setSending] = useState(false)
@@ -193,9 +193,10 @@ export function Booking() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <Field label={t('book.f.package')}>
                       <select value={state.package} onChange={upd('package')} className={inp}>
-                        <option value="classic">{t('pkg.classic.t')} — €65</option>
-                        <option value="premium">{t('pkg.premium.t')} — €95</option>
-                        <option value="expedition">{t('pkg.expedition.t')} — €180</option>
+                        <option value="rafting">{t('pkg.rafting.t')} — €50</option>
+                        <option value="canoe">{t('pkg.canoe.t')} — €50</option>
+                        <option value="hiking">{t('pkg.hiking.t')} — €45</option>
+                        <option value="special">{t('pkg.special.t')} — {t('pkg.priceOnReq')}</option>
                       </select>
                     </Field>
                     <Field label={t('book.f.group')} required error={errors.group}>

@@ -1,22 +1,32 @@
-// Authentic imagery from raftboys.ba — the client's real photography.
-// Hot-linked from their WordPress media library so the concept preview
-// shows the actual Raft Boys experience (Neretva river, Konjic, BiH).
+// Authentic imagery from raftboys.ba — the client's real photography
+// + the official Raft Boys site icon used as the brand mark.
 //
 // All URLs verified live on https://raftboys.ba
 
 const HOST = 'https://raftboys.ba/wp-content/uploads'
 
 export const IMG = {
+  // ── BRAND ──
+  // The official Raft Boys mark (the same image they use as their
+  // site icon / favicon / apple-touch-icon). Round portrait, works on
+  // both light and dark backgrounds because it's already trimmed.
+  logo:        `${HOST}/2025/04/cropped-kerim-bijeli-crni-debeli-scaled-1.png`,
+  logoSmall:   `${HOST}/2025/04/cropped-kerim-bijeli-crni-debeli-scaled-1-192x192.png`,
+
   // ── HERO ──
   heroVideo: null,
-  heroPoster: `${HOST}/2025/07/5-1-scaled-e1752833490811.jpg`,
-  // ↑ Wide whitewater shot from the 2025 Raft Boys gallery
+  // Wide Neretva river / canyon shot — emerald water, mountains in
+  // frame. Replaces the previous group portrait per client direction.
+  heroPoster:  `${HOST}/2025/02/IMG-20250417-WA0027-scaled.jpg`,
 
   // ── EXPERIENCES (4) ──
   expRafting:  `${HOST}/2025/07/7-1-scaled-e1752834146679.jpg`,
   expCanoeing: `${HOST}/2025/07/2-1-e1752835094410.jpg`,
   expHiking:   `${HOST}/2025/02/Prenj-Mountain-Planina-Prenj-Bosnia-Herzegovina-lll.ba-@bivakland-2-1024x1024-1.jpg`,
   expPackages: `${HOST}/2025/08/viber_image_2025-08-13_18-17-49-065-1-e1755103210888.jpg`,
+  // The earlier hero shot (group of guests on the river) — now used
+  // as a friendly mid-page "people" composition where it belongs.
+  expPeople:   `${HOST}/2025/07/5-1-scaled-e1752833490811.jpg`,
 
   // ── GALLERY (8) — real Raft Boys field photos ──
   gallery: [

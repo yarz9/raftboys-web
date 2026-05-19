@@ -3,28 +3,35 @@ import { ArrowUpRight, Check, ShieldCheck } from 'lucide-react'
 import { useT } from '@/i18n/useI18n'
 import { IMG } from '@/data/assets'
 
-// Editorial vertical comparison — image+specs rows, each with a
-// real feature checklist and a trust line. Conversion centerpiece.
+// Four real Raft Boys offerings with the prices that appear on
+// raftboys.ba. Image per package matches the activity in the copy.
 
 const PACKAGES = [
   {
-    key: 'classic',
-    priceFrom: 65,
-    image: IMG.gallery[0],
-    featured: false,
+    key: 'rafting',
+    priceFrom: 50,
+    image: IMG.expRafting,           // whitewater action shot
+    featured: true,                  // rafting is their flagship
     features: ['pickup', 'briefing', 'gear', 'lunch', 'photos'],
   },
   {
-    key: 'premium',
-    priceFrom: 95,
-    image: IMG.gallery[1],
-    featured: true,
-    features: ['pickup', 'briefing', 'gear', 'long', 'private', 'lunch', 'photos'],
+    key: 'canoe',
+    priceFrom: 50,
+    image: IMG.expCanoeing,          // canoe / calm-water shot
+    featured: false,
+    features: ['pickup', 'briefing', 'gear', 'photos'],
   },
   {
-    key: 'expedition',
-    priceFrom: 180,
-    image: IMG.gallery[5],
+    key: 'hiking',
+    priceFrom: 45,
+    image: IMG.expHiking,            // Prenj mountain shot
+    featured: false,
+    features: ['pickup', 'briefing', 'hike', 'photos'],
+  },
+  {
+    key: 'special',
+    priceFrom: null,                 // contact for pricing
+    image: IMG.expPackages,          // expedition / lifestyle shot
     featured: false,
     features: ['pickup', 'briefing', 'gear', 'hike', 'lodging', 'two_meals', 'photos'],
   },
@@ -105,11 +112,19 @@ export function Packages() {
                 {/* Price + CTA */}
                 <div className="mt-8 flex items-end gap-6 flex-wrap">
                   <div>
-                    <div className="label-caps text-[#64748B] text-[10px]">{t('pkg.from')}</div>
-                    <div className="serif text-[42px] md:text-[52px] font-medium leading-none text-[#0F172A] mt-1.5 tracking-tight">
-                      €{p.priceFrom}
-                      <span className="serif italic text-[15px] text-[#64748B] ml-1 font-normal">/ person</span>
+                    <div className="label-caps text-[#64748B] text-[10px]">
+                      {p.priceFrom != null ? t('pkg.from') : t('pkg.priceOnReq')}
                     </div>
+                    {p.priceFrom != null ? (
+                      <div className="serif text-[42px] md:text-[52px] font-medium leading-none text-[#0F172A] mt-1.5 tracking-tight">
+                        €{p.priceFrom}
+                        <span className="serif italic text-[15px] text-[#64748B] ml-1 font-normal">/ person</span>
+                      </div>
+                    ) : (
+                      <div className="serif italic text-[28px] md:text-[34px] leading-none text-[#0F172A] mt-1.5">
+                        {t('pkg.priceOnReq')}
+                      </div>
+                    )}
                   </div>
                   <a href="#booking" className="btn-river ml-auto md:ml-0">
                     {t('pkg.cta')} <ArrowUpRight size={16} />

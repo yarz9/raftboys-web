@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { useI18n, useT } from '@/i18n/useI18n'
 import { SUPPORTED, LANG_LABELS } from '@/i18n/dictionary'
+import { IMG } from '@/data/assets'
 
 // Editorial navigation — paper bar that subtly tints with scroll.
 // Serif italic wordmark, ruled separators, sky-accent CTA.
@@ -35,15 +36,17 @@ export function Nav() {
           : 'bg-transparent'
       }`}>
         <div className="max-w-[1320px] mx-auto px-5 md:px-12 h-[68px] md:h-[78px] flex items-center justify-between gap-6">
-          {/* Wordmark */}
-          <a href="#" className="flex items-baseline gap-2 group">
-            <span className={`serif-italic font-light text-[22px] md:text-[26px] tracking-tight transition-colors ${
-              scrolled ? 'text-[#0F172A]' : 'text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]'
+          {/* Brand mark — official Raft Boys logo, top-left */}
+          <a href="#" className="flex items-center gap-3 group" aria-label="Raft Boys — home">
+            <span className={`relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shrink-0 transition-all duration-500 ${
+              scrolled
+                ? 'ring-1 ring-[rgba(15,23,42,0.15)] bg-white'
+                : 'ring-2 ring-white/40 bg-white/10 shadow-[0_4px_16px_rgba(0,0,0,0.25)]'
             }`}>
-              Raft Boys
+              <img src={IMG.logo} alt="Raft Boys" className="w-full h-full object-cover" />
             </span>
-            <span className={`label-caps text-[9px] tracking-[0.35em] hidden md:inline transition-colors ${
-              scrolled ? 'text-[#0284C7]' : 'text-[#67E8F9]'
+            <span className={`label-caps text-[10px] tracking-[0.32em] hidden md:inline transition-colors ${
+              scrolled ? 'text-[#0284C7]' : 'text-[#67E8F9] drop-shadow-[0_1px_4px_rgba(0,0,0,0.4)]'
             }`}>
               Est. 1999
             </span>
@@ -100,7 +103,10 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] md:hidden bg-[#0F172A]/95 backdrop-blur-xl">
           <div className="max-w-[1320px] mx-auto px-5 h-[68px] flex items-center justify-between">
-            <span className="serif-italic font-light text-[22px] text-white">Raft Boys</span>
+            <span className="flex items-center gap-2.5">
+              <img src={IMG.logo} alt="Raft Boys" className="w-9 h-9 rounded-full ring-2 ring-white/30 object-cover" />
+              <span className="label-caps text-[10px] tracking-[0.32em] text-[#67E8F9]">Est. 1999</span>
+            </span>
             <button onClick={() => setOpen(false)} className="w-10 h-10 flex items-center justify-center text-white" aria-label="Close menu">
               <X size={22} />
             </button>

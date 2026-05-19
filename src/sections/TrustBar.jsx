@@ -7,7 +7,7 @@ import { useT } from '@/i18n/useI18n'
 const STATS = [
   { icon: Shield,           figure: '25+',           key: 'strip.since',   color: '#0EA5E9' },
   { icon: Star,             figure: '4.9',           key: 'strip.reviews', color: '#0284C7' },
-  { icon: Users,            figure: 'EN · BHS · DE', key: 'strip.langs',   color: '#06B6D4' },
+  { icon: Users,            figure: 'EN · BHS',      key: 'strip.langs',   color: '#06B6D4' },
   { icon: UtensilsCrossed,  figure: '✓',             key: 'strip.lunch',   color: '#0EA5E9' },
 ]
 
