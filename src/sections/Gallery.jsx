@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+﻿import { useState, useEffect, useCallback } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useT } from '@/i18n/useI18n'
@@ -55,13 +55,13 @@ export function Gallery() {
               <button
                 onClick={() => setOpen(i)}
                 aria-label={t(g.captionKey)}
-                className="relative w-full h-full overflow-hidden rounded-xl group focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="relative w-full h-full overflow-hidden rounded-xl group focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
               >
                 <img src={g.src} alt={t(g.captionKey)} loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06100D]/85 via-[#06100D]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#0F172A]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
                 <div className="absolute bottom-3 left-3 right-3 text-left">
-                  <span className="text-[10px] uppercase tracking-wider font-semibold text-emerald-400">Raft Boys</span>
+                  <span className="text-[10px] uppercase tracking-wider font-semibold text-sky-400">Raft Boys</span>
                   <p className="text-[12px] text-white mt-1 leading-tight">{t(g.captionKey)}</p>
                 </div>
               </button>
@@ -77,7 +77,7 @@ export function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[90] bg-[#06100D]/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
+            className="fixed inset-0 z-[90] bg-[#0F172A]/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
             onClick={close}
             role="dialog"
             aria-modal="true"

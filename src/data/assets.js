@@ -1,44 +1,39 @@
-// ALL imagery lives here. Swap these URLs for Raft Boys' real
-// photography when files are delivered. Naming uses dimensions so
-// the production swap is a one-line change per slot.
+// Authentic imagery from raftboys.ba — the client's real photography.
+// Hot-linked from their WordPress media library so the concept preview
+// shows the actual Raft Boys experience (Neretva river, Konjic, BiH).
 //
-// Sources today are high-resolution Unsplash rafting / Bosnia
-// nature stock for the concept preview. License-free, cinematic.
-// Replace before launch.
+// All URLs verified live on https://raftboys.ba
+
+const HOST = 'https://raftboys.ba/wp-content/uploads'
 
 export const IMG = {
   // ── HERO ──
-  heroVideo: null, // set to a /public/video.mp4 path when client video is delivered
-  heroPoster:
-    'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=2400&q=80',
-    // ↑ Wide cinematic shot of a raft on emerald whitewater. Replace with Raft Boys' best hero photo.
+  heroVideo: null,
+  heroPoster: `${HOST}/2025/07/5-1-scaled-e1752833490811.jpg`,
+  // ↑ Wide whitewater shot from the 2025 Raft Boys gallery
 
   // ── EXPERIENCES (4) ──
-  expRafting:
-    'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=1200&q=80',
-  expCanoeing:
-    'https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=1200&q=80',
-  expHiking:
-    'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=80',
-  expPackages:
-    'https://images.unsplash.com/photo-1502537745414-927d5a0c4ee9?auto=format&fit=crop&w=1200&q=80',
+  expRafting:  `${HOST}/2025/07/7-1-scaled-e1752834146679.jpg`,
+  expCanoeing: `${HOST}/2025/07/2-1-e1752835094410.jpg`,
+  expHiking:   `${HOST}/2025/02/Prenj-Mountain-Planina-Prenj-Bosnia-Herzegovina-lll.ba-@bivakland-2-1024x1024-1.jpg`,
+  expPackages: `${HOST}/2025/08/viber_image_2025-08-13_18-17-49-065-1-e1755103210888.jpg`,
 
-  // ── GALLERY (8) ──
+  // ── GALLERY (8) — real Raft Boys field photos ──
   gallery: [
-    'https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1583499871880-de841d1ace2a?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1496950866446-3253e1470e8e?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1455156218388-5e61b526818b?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1530538095376-a4936b35b5f0?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1490604001847-b712b0c2f967?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
+    `${HOST}/2025/04/IMG-20250417-WA0004-scaled.jpg`,
+    `${HOST}/2025/04/IMG-20250417-WA0009-1-scaled.jpg`,
+    `${HOST}/2025/02/IMG-20250417-WA0027-scaled.jpg`,
+    `${HOST}/2025/02/IMG-20250417-WA0025.jpg`,
+    `${HOST}/2025/02/IMG-20250417-WA0026-scaled.jpg`,
+    `${HOST}/2025/02/Prenj-7.jpg`,
+    `${HOST}/2025/02/gal-prenj-100.jpg`,
+    `${HOST}/2025/04/IMG-20250418-WA0011.jpg`,
   ],
 
-  // ── GUIDES (3 — Kerim + team placeholders) ──
+  // ── GUIDES (Kerim + team) ──
   guides: [
-    'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=80',
+    `${HOST}/2024/06/kerim-bijeli-debeli.png`,
+    `${HOST}/2025/04/kerim-crni-debeli-939x1024.png`,
+    `${HOST}/2025/04/kerim-crni-debeli.png`,
   ],
 }

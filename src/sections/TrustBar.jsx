@@ -1,24 +1,28 @@
-import { ShieldCheck, Globe, Users, CreditCard } from 'lucide-react'
-import { useT } from '@/i18n/useI18n'
+﻿import { useT } from '@/i18n/useI18n'
+
+// Quiet rule of facts between sections. Not a card, not a chip
+// cluster â€” a typographic ruled line.
 
 export function TrustBar() {
   const t = useT()
   const items = [
-    { icon: ShieldCheck, label: t('strip.since') },
-    { icon: Globe,       label: t('strip.langs') },
-    { icon: Users,       label: t('strip.groups') },
-    { icon: CreditCard,  label: t('strip.payment') },
+    t('strip.since'),
+    t('strip.reviews'),
+    t('strip.langs'),
+    t('strip.lunch'),
   ]
   return (
-    <section id="trust" className="relative border-y border-white/5 bg-[#0A1612]">
-      <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-6">
-        <div className="flex items-center justify-between gap-x-8 gap-y-4 flex-wrap">
-          {items.map(it => (
-            <div key={it.label} className="flex items-center gap-2 text-[12px] text-white/70">
-              <it.icon size={14} className="text-emerald-400 shrink-0" />
-              <span>{it.label}</span>
-            </div>
-          ))}
+    <section className="relative bg-[#F1F7FA] text-[#475569]">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12">
+        <div className="border-t border-b border-[rgba(14,26,26,0.10)] py-6">
+          <ul className="flex items-center justify-between gap-x-6 gap-y-3 flex-wrap label-caps text-[11px]">
+            {items.map((it, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-[#0EA5E9]" />
+                <span>{it}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

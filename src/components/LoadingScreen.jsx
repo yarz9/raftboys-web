@@ -1,6 +1,7 @@
-// CLOZ.DIGITAL PREVIEW loading screen — shown on initial site load
-// only. Fades out after critical assets are ready or 1.4s, whichever
-// is later. Respects prefers-reduced-motion.
+﻿// Editorial concept-preview overlay. Warm paper background, serif
+// wordmark, slow horizontal "water-line" indicator instead of the
+// usual progress bar. Fades out after window.load (+ 1.2s min,
+// 2.6s hard cap). Respects prefers-reduced-motion.
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
@@ -15,19 +16,13 @@ export function LoadingScreen() {
     const minMs = reduce ? 200 : 1200
     const start = performance.now()
     let cancelled = false
-
     const finish = () => {
       const elapsed = performance.now() - start
-      const wait = Math.max(0, minMs - elapsed)
-      setTimeout(() => { if (!cancelled) setShow(false) }, wait)
+      setTimeout(() => { if (!cancelled) setShow(false) }, Math.max(0, minMs - elapsed))
     }
-
     if (document.readyState === 'complete') finish()
     else window.addEventListener('load', finish, { once: true })
-
-    // Hard cap so a hung asset never blocks UI
-    const cap = setTimeout(finish, reduce ? 600 : 2400)
-
+    const cap = setTimeout(finish, reduce ? 600 : 2600)
     return () => { cancelled = true; clearTimeout(cap); window.removeEventListener('load', finish) }
   }, [reduce])
 
@@ -35,95 +30,66 @@ export function LoadingScreen() {
     <AnimatePresence>
       {show && (
         <motion.div
-          key="loading"
+          key="rb-loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: reduce ? 0.05 : 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[100] bg-[#06100D] flex items-center justify-center px-6"
+          transition={{ duration: reduce ? 0.05 : 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center px-6"
+          style={{
+            background: 'radial-gradient(circle at 30% 30%, #F1F7FA 0%, #CFDBE4 60%, #BAE6FD 100%)',
+          }}
           role="status"
           aria-live="polite"
         >
-          {/* Ambient glow */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 60%)' }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, ease: 'easeOut' }}
-            />
-            <motion.div
-              className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(20,184,180,0.18) 0%, transparent 60%)' }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.4, delay: 0.15 }}
-            />
-          </div>
+          {/* Faint serif RAFT BOYS watermark in the corner */}
+          <span className="absolute top-6 left-6 serif italic text-[14px] text-[#475569]/50">Raft Boys</span>
+          <span className="absolute top-6 right-6 label-caps text-[#475569]/60">Est. 1999</span>
 
-          <div className="relative flex flex-col items-center text-center">
-            {/* Wordmark — animated */}
+          <div className="text-center max-w-[540px]">
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: reduce ? 0.05 : 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-4"
-            >
-              <div className="flex items-center gap-2.5">
-                <ClozLogo />
-                <span className="font-display font-bold text-[18px] tracking-[0.18em] uppercase text-white">
-                  {t('loading.brand')}
-                </span>
-              </div>
-            </motion.div>
-
-            <motion.p
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: reduce ? 0.05 : 0.7, delay: reduce ? 0 : 0.2 }}
-              className="text-[13px] text-[#B4CDC2] max-w-[420px]"
+              transition={{ duration: reduce ? 0.05 : 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="label-caps text-[#475569]"
+            >
+              {t('loading.brand')}
+            </motion.div>
+
+            {/* Subtle water-line: an SVG sine slowly drifting */}
+            <div className="mt-6 mx-auto w-[220px] h-[28px] overflow-hidden opacity-90" aria-hidden="true">
+              <svg viewBox="0 0 220 28" className="w-full h-full">
+                <motion.path
+                  d="M0,14 Q27.5,4 55,14 T110,14 T165,14 T220,14"
+                  stroke="#0284C7" strokeWidth="1.5" fill="none" strokeLinecap="round"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: reduce ? 0.05 : 1.4, ease: 'easeInOut' }}
+                />
+                {!reduce && (
+                  <motion.circle
+                    cx="0" cy="14" r="2.5" fill="#0284C7"
+                    animate={{ cx: [0, 220], cy: [14, 6, 14, 22, 14] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+                  />
+                )}
+              </svg>
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: reduce ? 0.05 : 0.7, delay: reduce ? 0 : 0.35 }}
+              className="mt-4 serif italic text-[16px] text-[#475569]"
             >
               {t('loading.sub')}
             </motion.p>
-
-            {/* Pulsing thin bar */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: reduce ? 0 : 0.4, duration: 0.4 }}
-              className="mt-6 w-[180px] h-[2px] rounded-full bg-white/5 overflow-hidden"
-            >
-              {!reduce && (
-                <motion.div
-                  className="h-full bg-gradient-to-r from-transparent via-[#10B981] to-transparent"
-                  initial={{ x: '-100%' }}
-                  animate={{ x: '100%' }}
-                  transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
-                />
-              )}
-            </motion.div>
           </div>
+
+          <span className="absolute bottom-6 left-6 right-6 text-center label-caps text-[#475569]/50">
+            cloz.digital
+          </span>
         </motion.div>
       )}
     </AnimatePresence>
-  )
-}
-
-// Inline SVG monogram — replace with real Cloz Digital mark when ready.
-function ClozLogo() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="clz-g" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#10B981" />
-          <stop offset="0.5" stopColor="#14B8B4" />
-          <stop offset="1" stopColor="#06B6D4" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M12 2.5C6.75 2.5 2.5 6.75 2.5 12s4.25 9.5 9.5 9.5c4.6 0 8.43-3.27 9.31-7.62"
-        stroke="url(#clz-g)" strokeWidth="2.4" strokeLinecap="round" fill="none"
-      />
-    </svg>
   )
 }

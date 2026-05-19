@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Loader2, CheckCircle2, AlertCircle, MessageCircle, Send, Calendar, Users, Mail, Phone, User } from 'lucide-react'
 import { useI18n, useT } from '@/i18n/useI18n'
@@ -72,7 +72,7 @@ export function Booking() {
     const payload = { ...form, lang, source: 'raftboys_website', submitted_at: new Date().toISOString() }
 
     // If a real endpoint is configured, POST. Otherwise treat as
-    // success after a short delay — concept-preview mode.
+    // success after a short delay â€” concept-preview mode.
     if (ENDPOINT) {
       try {
         const res = await fetch(ENDPOINT, {
@@ -82,7 +82,7 @@ export function Booking() {
         })
         if (!res.ok) throw new Error(`Server returned ${res.status}`)
       } catch (e2) {
-        // Network failure → still let the visitor through to WhatsApp.
+        // Network failure â†’ still let the visitor through to WhatsApp.
         // The non-negotiable rule from the Cloz inquiry endpoint:
         // never lose a prospect because of an SMTP/network issue.
         setError(t('book.err.network'))
@@ -99,7 +99,7 @@ export function Booking() {
   }
 
   const waText = encodeURIComponent(
-    `Hi Raft Boys — I'd like to book the ${t(`pkg.${form.package}.t`)} on ${form.date || '[date]'} for ${form.group} ${form.group === 1 ? 'person' : 'people'}.\n\nName: ${form.name}\nEmail: ${form.email}`
+    `Hi Raft Boys â€” I'd like to book the ${t(`pkg.${form.package}.t`)} on ${form.date || '[date]'} for ${form.group} ${form.group === 1 ? 'person' : 'people'}.\n\nName: ${form.name}\nEmail: ${form.email}`
   )
   const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${waText}`
 
@@ -131,15 +131,15 @@ export function Booking() {
                     className="py-10 text-center"
                   >
                     <div className="relative inline-flex">
-                      <div className="absolute inset-0 rounded-full bg-emerald-500/20 animate-glow-pulse" />
-                      <div className="relative w-16 h-16 rounded-full bg-emerald-500/10 border-2 border-emerald-500/30 flex items-center justify-center">
-                        <CheckCircle2 size={28} className="text-emerald-400" />
+                      <div className="absolute inset-0 rounded-full bg-sky-500/20 animate-glow-pulse" />
+                      <div className="relative w-16 h-16 rounded-full bg-sky-500/10 border-2 border-sky-500/30 flex items-center justify-center">
+                        <CheckCircle2 size={28} className="text-sky-400" />
                       </div>
                     </div>
                     <h3 className="mt-6 font-display font-bold text-[22px] text-white">{t('book.success.t')}</h3>
                     <p className="mt-3 text-[14px] text-white/65 max-w-[420px] mx-auto leading-relaxed">{t('book.success.d')}</p>
                     <a href={waUrl} target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-7 text-[13px] text-emerald-400 hover:text-emerald-300 font-semibold">
+                      className="inline-flex items-center gap-2 mt-7 text-[13px] text-sky-400 hover:text-sky-300 font-semibold">
                       <MessageCircle size={14} /> {t('book.f.whatsapp')}
                     </a>
                   </motion.div>
@@ -164,7 +164,7 @@ export function Booking() {
                     </div>
 
                     <Field label={t('book.f.phone')} icon={Phone}>
-                      <Input value={form.phone} onChange={e => set('phone', e.target.value)} autoComplete="tel" placeholder="+387 …" />
+                      <Input value={form.phone} onChange={e => set('phone', e.target.value)} autoComplete="tel" placeholder="+387 â€¦" />
                     </Field>
 
                     <div className="grid sm:grid-cols-3 gap-3">
@@ -174,7 +174,7 @@ export function Booking() {
                       <Field label={t('book.f.package')}>
                         <Select value={form.package} onChange={e => set('package', e.target.value)}>
                           {PACKAGES.map(p => (
-                            <option key={p.key} value={p.key}>{t(`pkg.${p.key}.t`)} — €{p.priceFrom}</option>
+                            <option key={p.key} value={p.key}>{t(`pkg.${p.key}.t`)} â€” â‚¬{p.priceFrom}</option>
                           ))}
                         </Select>
                       </Field>
@@ -191,12 +191,12 @@ export function Booking() {
                     <Field label={t('book.f.message')}>
                       <textarea value={form.message} onChange={e => set('message', e.target.value)} rows={3}
                         placeholder={t('book.f.message.ph')}
-                        className="w-full bg-[#06100D] border border-white/10 rounded-md px-3 py-2.5 text-[13.5px] text-white placeholder:text-white/30 focus:border-emerald-400 focus:outline-none resize-none" />
+                        className="w-full bg-[#0F172A] border border-white/10 rounded-md px-3 py-2.5 text-[13.5px] text-white placeholder:text-white/30 focus:border-sky-400 focus:outline-none resize-none" />
                     </Field>
 
                     <label className="flex items-start gap-2 text-[12px] text-white/65 pt-1">
                       <input type="checkbox" checked={form.consent} onChange={e => set('consent', e.target.checked)}
-                        className="mt-0.5 accent-emerald-500" />
+                        className="mt-0.5 accent-sky-500" />
                       <span>{t('book.f.consent')}</span>
                     </label>
 
@@ -217,30 +217,30 @@ export function Booking() {
               </AnimatePresence>
             </form>
 
-            {/* Sidebar — quick facts */}
+            {/* Sidebar â€” quick facts */}
             <div className="lg:col-span-2 space-y-4">
               <div className="card-premium">
                 <h4 className="font-display font-semibold text-[14px] text-white mb-3">{BUSINESS.name}</h4>
                 <ul className="space-y-2.5 text-[13px] text-white/75">
                   <li className="flex items-start gap-2.5">
-                    <Phone size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                    <Phone size={14} className="text-sky-400 mt-0.5 shrink-0" />
                     <a href={`tel:${BUSINESS.phoneRaw}`} className="hover:text-white">{BUSINESS.phone}</a>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <Mail size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                    <Mail size={14} className="text-sky-400 mt-0.5 shrink-0" />
                     <a href={`mailto:${BUSINESS.email}`} className="hover:text-white">{BUSINESS.email}</a>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <Calendar size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                    <Calendar size={14} className="text-sky-400 mt-0.5 shrink-0" />
                     <span>{BUSINESS.hours}</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="rounded-2xl p-5 bg-gradient-to-br from-emerald-500/12 via-cyan-500/8 to-transparent border border-emerald-500/20">
-                <h4 className="font-display font-semibold text-[14px] text-white mb-2">⚡ Reply within 30 minutes</h4>
+              <div className="rounded-2xl p-5 bg-gradient-to-br from-sky-500/12 via-cyan-500/8 to-transparent border border-sky-500/20">
+                <h4 className="font-display font-semibold text-[14px] text-white mb-2">âš¡ Reply within 30 minutes</h4>
                 <p className="text-[12.5px] text-white/70 leading-relaxed">
-                  During business hours, a real person from our team replies to every booking request within 30 minutes — usually faster.
+                  During business hours, a real person from our team replies to every booking request within 30 minutes â€” usually faster.
                 </p>
               </div>
             </div>
@@ -256,7 +256,7 @@ function Field({ label, icon: Icon, required, children }) {
     <label className="block">
       <span className="flex items-center gap-1.5 text-[10.5px] text-white/55 uppercase tracking-wider font-semibold mb-1.5">
         {Icon && <Icon size={11} />}
-        {label}{required && <span className="text-emerald-400 ml-0.5">*</span>}
+        {label}{required && <span className="text-sky-400 ml-0.5">*</span>}
       </span>
       {children}
     </label>
@@ -265,13 +265,13 @@ function Field({ label, icon: Icon, required, children }) {
 function Input({ ...props }) {
   return (
     <input {...props}
-      className="w-full bg-[#06100D] border border-white/10 rounded-md px-3 py-2.5 text-[13.5px] text-white placeholder:text-white/30 focus:border-emerald-400 focus:outline-none transition-colors" />
+      className="w-full bg-[#0F172A] border border-white/10 rounded-md px-3 py-2.5 text-[13.5px] text-white placeholder:text-white/30 focus:border-sky-400 focus:outline-none transition-colors" />
   )
 }
 function Select({ children, ...props }) {
   return (
     <select {...props}
-      className="w-full bg-[#06100D] border border-white/10 rounded-md px-3 py-2.5 text-[13.5px] text-white focus:border-emerald-400 focus:outline-none transition-colors appearance-none">
+      className="w-full bg-[#0F172A] border border-white/10 rounded-md px-3 py-2.5 text-[13.5px] text-white focus:border-sky-400 focus:outline-none transition-colors appearance-none">
       {children}
     </select>
   )

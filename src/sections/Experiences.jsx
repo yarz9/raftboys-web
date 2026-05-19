@@ -1,73 +1,138 @@
-import { Waves, LifeBuoy, Mountain, Compass, ArrowRight, Clock, Flame } from 'lucide-react'
+﻿import { ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { useT } from '@/i18n/useI18n'
-import { Reveal, RevealStagger, RevealItem, SpotlightCard } from '@/motion/primitives'
-import { EXPERIENCES } from '@/data/content'
+import { IMG } from '@/data/assets'
 
-const ICON_MAP = { Waves, LifeBuoy, Mountain, Compass }
+const ITEMS = [
+  { key: 'rafting',   image: IMG.expRafting,   duration: '3.5 h', priceFrom: 65, big: true },
+  { key: 'canoeing',  image: IMG.expCanoeing,  duration: '2.5 h', priceFrom: 45 },
+  { key: 'hiking',    image: IMG.expHiking,    duration: 'Full day', priceFrom: 75 },
+  { key: 'weekend',   image: IMG.expPackages,  duration: '2 days', priceFrom: 180 },
+]
 
 export function Experiences() {
   const t = useT()
   return (
-    <section id="experiences" className="relative py-24 md:py-32 px-5 md:px-8 section-glow">
-      <div className="relative max-w-[1280px] mx-auto">
-        <Reveal>
-          <SectionHeader
-            eyebrow={t('exp.eyebrow')}
-            title={t('exp.title')}
-            sub={t('exp.sub')}
-          />
-        </Reveal>
+    <section id="experiences" className="relative bg-[#F1F7FA] text-[#0F172A] pt-8 pb-24 md:pb-32">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12">
+        {/* Section header â€” editorial, left-aligned */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7 }}
+          className="flex items-end justify-between gap-6 flex-wrap mb-12 md:mb-16 pt-16"
+        >
+          <div className="max-w-[700px]">
+            <div className="label-caps text-[#475569] mb-3">{t('exp.eyebrow')}</div>
+            <h2 className="serif text-[clamp(34px,5.6vw,72px)] font-medium leading-[1.02] tracking-tight">
+              {t('exp.title')}
+            </h2>
+          </div>
+        </motion.div>
 
-        <RevealStagger className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {EXPERIENCES.map(e => {
-            const Icon = ICON_MAP[e.iconName] || Waves
-            return (
-              <RevealItem key={e.key}>
-                <SpotlightCard className="card-premium !p-0 overflow-hidden h-full flex flex-col img-tint-hover">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img src={e.image} alt={t(`exp.${e.key}.t`)} loading="lazy"
-                      className="w-full h-full object-cover img-tint" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-emerald-400 font-semibold mb-2">
-                      <Icon size={11} /> {t('exp.from')} {e.priceUnit}{e.priceFrom}
-                    </div>
-                    <h3 className="font-display font-semibold text-[17px] text-white mb-1.5 leading-tight">
-                      {t(`exp.${e.key}.t`)}
-                    </h3>
-                    <p className="text-[12.5px] text-white/65 leading-relaxed flex-1">{t(`exp.${e.key}.d`)}</p>
+        {/* Asymmetric grid: one hero card + three stacked small ones */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-7">
+          {/* Hero feature */}
+          <FeatureCard item={ITEMS[0]} large t={t} className="lg:col-span-7 lg:row-span-2" />
 
-                    <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-white/55">
-                      <span className="flex items-center gap-1.5"><Clock size={11} /> {e.duration}</span>
-                      <span className="flex items-center gap-0.5">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Flame key={i} size={10} className={i < e.intensity ? 'text-emerald-400' : 'text-white/15'} />
-                        ))}
-                      </span>
-                    </div>
-
-                    <a href="#booking" className="mt-4 inline-flex items-center gap-1 text-[12px] font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
-                      {t('exp.cta')} <ArrowRight size={12} />
-                    </a>
-                  </div>
-                </SpotlightCard>
-              </RevealItem>
-            )
-          })}
-        </RevealStagger>
+          {/* Three small */}
+          <FeatureCard item={ITEMS[1]} t={t} className="lg:col-span-5" />
+          <FeatureCard item={ITEMS[2]} t={t} className="lg:col-span-5" />
+          <FeatureCard item={ITEMS[3]} t={t} className="lg:col-span-12 lg:flex-row-card" />
+        </div>
       </div>
     </section>
   )
 }
 
-export function SectionHeader({ eyebrow, title, sub, centered }) {
+function FeatureCard({ item, large = false, className = '', t }) {
+  const isWide = className.includes('lg:col-span-12')
+
   return (
-    <div className={`max-w-[760px] ${centered ? 'mx-auto text-center' : ''}`}>
-      {eyebrow && <div className="chip mb-4">{eyebrow}</div>}
-      <h2 className="font-display font-bold text-[34px] md:text-[48px] leading-[1.08] tracking-tight">
-        <span className="text-gradient-static">{title}</span>
-      </h2>
-      {sub && <p className="mt-5 text-[15px] md:text-[16px] text-white/65 leading-relaxed">{sub}</p>}
+    <motion.a
+      href="#booking"
+      initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      className={`group relative block frame no-underline text-[#0F172A] ${className}`}
+    >
+      <div className={`relative overflow-hidden ${
+        large ? 'aspect-[4/5] md:aspect-[5/6]'
+        : isWide ? 'aspect-[3/1] hidden md:block'
+        : 'aspect-[5/4]'
+      }`}>
+        <img
+          src={item.image}
+          alt={t(`exp.${item.key}.t`)}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#0F172A]/15 to-transparent" />
+
+        {/* Top-left index */}
+        <span className="absolute top-4 left-4 md:top-5 md:left-5 label-caps text-[#F1F7FA]/90">
+          NÂ° {String(ITEMS.findIndex(i => i.key === item.key) + 1).padStart(2, '0')}
+        </span>
+
+        {/* Bottom block â€” title, body, tags */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-[#F1F7FA]">
+          <h3 className={`serif font-medium leading-[1.05] tracking-tight ${
+            large ? 'text-[clamp(28px,4vw,46px)]' : 'text-[clamp(22px,2.4vw,30px)]'
+          }`}>
+            {t(`exp.${item.key}.t`)}
+          </h3>
+          <p className={`mt-3 text-[#F1F7FA]/85 leading-relaxed max-w-[520px] ${large ? 'text-[15px]' : 'text-[13.5px]'}`}>
+            {t(`exp.${item.key}.d`)}
+          </p>
+
+          <div className="mt-5 flex items-center gap-3 flex-wrap">
+            <span className="tag on-deep">
+              <span className="serif italic text-[#67E8F9]">âŒ›</span> {item.duration}
+            </span>
+            <span className="tag on-deep">
+              <span className="serif italic text-[#67E8F9]">{t('exp.from')}</span> â‚¬{item.priceFrom}
+            </span>
+            <span className="ml-auto inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#F1F7FA] text-[#0F172A] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+              <ArrowUpRight size={15} />
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* For the wide bottom card on mobile, show a vertical version */}
+      {isWide && (
+        <div className="md:hidden relative aspect-[5/4] overflow-hidden">
+          <img
+            src={item.image}
+            alt={t(`exp.${item.key}.t`)}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 text-[#F1F7FA]">
+            <h3 className="serif text-[24px] font-medium leading-tight">{t(`exp.${item.key}.t`)}</h3>
+            <p className="mt-2 text-[13px] text-[#F1F7FA]/85">{t(`exp.${item.key}.d`)}</p>
+          </div>
+        </div>
+      )}
+    </motion.a>
+  )
+}
+
+// Compatibility shim for legacy sections (Gallery/Timeline/Packages/Map/FAQ/Booking)
+// that still import { SectionHeader }. Editorial header on cool-paper.
+export function SectionHeader({ eyebrow, title, sub }) {
+  return (
+    <div className="grid md:grid-cols-12 gap-8 mb-10">
+      <div className="md:col-span-3">
+        <div className="label-caps text-[#0284C7]">{eyebrow}</div>
+      </div>
+      <div className="md:col-span-9">
+        <h2 className="serif text-[clamp(30px,5vw,60px)] font-medium leading-[1.05] tracking-tight">
+          {title}
+        </h2>
+        {sub && <p className="serif italic text-[17px] text-[#475569] mt-4 max-w-[640px]">{sub}</p>}
+      </div>
     </div>
   )
 }

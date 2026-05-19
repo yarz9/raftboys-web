@@ -4,13 +4,14 @@ import { LoadingScreen } from './components/LoadingScreen'
 import { FloatingFab } from './components/FloatingFab'
 import { ScrollProgress } from './motion/primitives'
 
-import { Hero }        from './sections/Hero'
-import { TrustBar }    from './sections/TrustBar'
-import { Experiences } from './sections/Experiences'
-import { WhyChoose }   from './sections/WhyChoose'
-import { Guides }      from './sections/Guides'
-import { Timeline }    from './sections/Timeline'
-import { Reviews }     from './sections/Reviews'
+import { Hero }            from './sections/Hero'
+import { EditorialIntro }  from './sections/EditorialIntro'
+import { TrustBar }        from './sections/TrustBar'
+import { Experiences }     from './sections/Experiences'
+import { WhyChoose }       from './sections/WhyChoose'
+import { Guides }          from './sections/Guides'
+import { Itinerary }       from './sections/Itinerary'
+import { Reviews }         from './sections/Reviews'
 import { Gallery }     from './sections/Gallery'
 import { Packages }    from './sections/Packages'
 import { FAQ }         from './sections/FAQ'
@@ -25,11 +26,12 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
+        <EditorialIntro />
         <TrustBar />
         <Experiences />
         <WhyChoose />
+        <Itinerary />
         <Guides />
-        <Timeline />
         <Reviews />
         <Gallery />
         <Packages />

@@ -1,97 +1,84 @@
-import { useState } from 'react'
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { useT } from '@/i18n/useI18n'
-import { Reveal } from '@/motion/primitives'
-import { REVIEWS } from '@/data/content'
-import { SectionHeader } from './Experiences'
+
+// One enormous editorial pull-quote, surrounded by three smaller
+// supporting quotes in the margins. No carousel, no cards, no
+// "300+ five-star reviews" KPI â€” that fact gets a quiet bottom-rail.
 
 export function Reviews() {
   const t = useT()
-  const [idx, setIdx] = useState(0)
-  const total = REVIEWS.length
-
-  const go = (delta) => setIdx(i => (i + delta + total) % total)
-
   return (
-    <section className="relative py-24 md:py-32 px-5 md:px-8 border-t border-white/5 bg-[#0A1612]">
-      <div className="relative max-w-[1280px] mx-auto">
-        <Reveal>
-          <SectionHeader
-            eyebrow={t('reviews.eyebrow')}
-            title={t('reviews.title')}
-            sub={t('reviews.sub')}
-            centered
-          />
-        </Reveal>
+    <section className="relative bg-[#0F172A] text-[#F1F7FA] overflow-hidden">
+      {/* Top wave */}
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"
+        className="block w-full" style={{ height: 100, transform: 'scaleY(-1)' }}>
+        <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="#F1F7FA" />
+      </svg>
 
-        <Reveal delay={0.1} className="mt-12 max-w-[820px] mx-auto">
-          <div className="relative">
-            {/* Slide */}
-            <div className="card-premium with-sheen min-h-[280px] !p-8 md:!p-12 text-center">
-              <Quote size={28} className="text-emerald-400/50 mx-auto mb-5" />
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <p className="text-[16px] md:text-[19px] text-white leading-relaxed">
-                    {t(REVIEWS[idx].quoteKey)}
-                  </p>
-                  <div className="mt-6 flex flex-col items-center gap-2">
-                    <div className="flex gap-0.5">
-                      {Array.from({ length: REVIEWS[idx].rating }).map((_, i) => (
-                        <Star key={i} size={14} className="text-emerald-400 fill-emerald-400" />
-                      ))}
-                    </div>
-                    <div className="text-[12px] text-white/65">
-                      {REVIEWS[idx].name} · {REVIEWS[idx].country} · {new Date(REVIEWS[idx].date).toLocaleDateString()}
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+      <div className="max-w-[1240px] mx-auto px-5 md:px-12 py-24 md:py-36">
 
-            {/* Controls */}
-            <div className="mt-6 flex items-center justify-center gap-3">
-              <button onClick={() => go(-1)}
-                aria-label="Previous review"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors">
-                <ChevronLeft size={16} />
-              </button>
-              <div className="flex items-center gap-1.5">
-                {REVIEWS.map((_, i) => (
-                  <button key={i} onClick={() => setIdx(i)}
-                    aria-label={`Go to review ${i + 1}`}
-                    className={`h-1.5 rounded-full transition-all ${
-                      i === idx ? 'w-8 bg-emerald-400' : 'w-1.5 bg-white/15 hover:bg-white/30'
-                    }`} />
-                ))}
-              </div>
-              <button onClick={() => go(1)}
-                aria-label="Next review"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors">
-                <ChevronRight size={16} />
-              </button>
-            </div>
-          </div>
-        </Reveal>
+        <div className="label-caps text-[#67E8F9] text-center mb-10">
+          {t('rev.eyebrow')}
+        </div>
 
-        {/* Aggregate proof */}
-        <Reveal delay={0.2} className="mt-10 flex items-center justify-center gap-6 flex-wrap text-[12px] text-white/55">
-          <div className="flex items-center gap-2">
-            <div className="flex gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={12} className="text-emerald-400 fill-emerald-400" />)}
-            </div>
-            <span>4.9 average rating</span>
-          </div>
-          <span className="opacity-30">·</span>
-          <span>300+ five-star reviews on TripAdvisor + Google</span>
-        </Reveal>
+        {/* The big quote */}
+        <motion.figure
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-[1080px] mx-auto"
+        >
+          {/* Decorative open quote */}
+          <div className="serif text-[#0EA5E9] text-[120px] md:text-[180px] leading-[0.5] mb-2 select-none" aria-hidden>"</div>
+
+          <blockquote className="pull-quote text-[clamp(32px,5.4vw,68px)] leading-[1.12] tracking-tight text-[#F1F7FA]">
+            {t('rev.big.text')}
+          </blockquote>
+
+          <figcaption className="mt-10">
+            <div className="serif italic text-[18px] text-[#F1F7FA]">{t('rev.big.author')}</div>
+            <div className="label-caps text-[#67E8F9] mt-1 text-[10px]">{t('rev.big.where')}</div>
+          </figcaption>
+        </motion.figure>
+
+        {/* Supporting trio â€” small column blockquotes */}
+        <div className="mt-24 md:mt-32 grid md:grid-cols-3 gap-10 md:gap-14 max-w-[1100px] mx-auto">
+          {[
+            { q: 'rev.q1', w: 'rev.q1.who' },
+            { q: 'rev.q2', w: 'rev.q2.who' },
+            { q: 'rev.q3', w: 'rev.q3.who' },
+          ].map((r, i) => (
+            <motion.figure key={i}
+              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, delay: 0.1 * i }}
+              className="border-l-2 border-[#0EA5E9]/40 pl-5"
+            >
+              <blockquote className="serif italic text-[16px] md:text-[17px] leading-[1.5] text-[#F1F7FA]/90">
+                {t(r.q)}
+              </blockquote>
+              <figcaption className="mt-3 label-caps text-[#67E8F9]">{t(r.w)}</figcaption>
+            </motion.figure>
+          ))}
+        </div>
+
+        {/* Tally rail */}
+        <div className="mt-24 md:mt-32 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-center">
+          <span className="serif text-[36px] md:text-[44px] text-[#67E8F9] leading-none">
+            {t('rev.tally.score')}
+          </span>
+          <span aria-hidden className="hidden md:block w-px h-8 bg-[#F1F7FA]/30" />
+          <span className="serif italic text-[15px] md:text-[16px] text-[#F1F7FA]/70">
+            {t('rev.tally.note')}
+          </span>
+        </div>
       </div>
+
+      {/* Bottom wave */}
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"
+        className="block w-full" style={{ height: 100 }}>
+        <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="#F1F7FA" />
+      </svg>
     </section>
   )
 }

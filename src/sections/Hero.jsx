@@ -1,117 +1,86 @@
-import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowDown, ArrowRight, Sparkles } from 'lucide-react'
+﻿import { motion, useReducedMotion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import { useT } from '@/i18n/useI18n'
-import { MagneticButton, CountUp } from '@/motion/primitives'
 import { IMG } from '@/data/assets'
+
+// Hero â€” full-bleed cinematic photo, slow horizontal drift, serif
+// headline with an italic stress word. No magnetic CTAs, no trust
+// tile cluster â€” those move to the editorial intro that follows.
 
 export function Hero() {
   const t = useT()
   const reduce = useReducedMotion()
 
-  const stagger = {
-    hidden: { opacity: 1 },
-    show: { opacity: 1, transition: { staggerChildren: reduce ? 0 : 0.08, delayChildren: reduce ? 0 : 0.1 } },
-  }
-  const item = reduce
-    ? { hidden: { opacity: 1 }, show: { opacity: 1 } }
-    : { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } } }
-
   return (
-    <section id="top" className="relative min-h-[100svh] flex items-center overflow-hidden">
-      {/* ── Cinematic background ── */}
+    <section id="top" className="relative min-h-[100svh] flex items-end overflow-hidden bg-[#0F172A] text-[#F1F7FA]">
+      {/* Layered background */}
       <div className="absolute inset-0">
-        {IMG.heroVideo ? (
-          <video
-            autoPlay muted loop playsInline preload="metadata"
-            poster={IMG.heroPoster}
-            className="w-full h-full object-cover"
-          >
-            <source src={IMG.heroVideo} type="video/mp4" />
-          </video>
-        ) : (
-          <motion.img
+        <div className={`absolute inset-0 ${reduce ? '' : 'drift'}`}>
+          <img
             src={IMG.heroPoster}
             alt=""
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.08 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: reduce ? 0 : 2.4, ease: 'easeOut' }}
+            className="w-full h-full object-cover scale-110"
+            loading="eager"
+            fetchpriority="high"
           />
-        )}
-        {/* Dark cinematic gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#06100D]/30 via-[#06100D]/55 to-[#06100D]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#06100D]/70 via-transparent to-transparent" />
-        {/* Accent ambient glow */}
-        <motion.div
-          className="absolute -top-32 -right-20 w-[800px] h-[800px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 60%)' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.6, delay: 0.2 }}
-        />
+        </div>
+        {/* Editorial gradient: dark bottom, soft top, vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/55 to-[#0F172A]/15" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0F172A]/60 to-transparent" />
       </div>
 
-      {/* ── Content ── */}
-      <div className="relative max-w-[1280px] mx-auto w-full px-5 md:px-8 pt-28 pb-20">
-        <motion.div variants={stagger} initial="hidden" animate="show" className="max-w-[820px]">
-          <motion.div variants={item} className="chip mb-6">
-            <Sparkles size={11} />
-            <span>{t('hero.eyebrow')}</span>
-          </motion.div>
-
-          <motion.h1 variants={item} className="font-display font-bold leading-[1.04] tracking-tight text-white text-[44px] sm:text-[58px] md:text-[78px]">
-            {t('hero.h1.a')}<br />
-            <span className="text-gradient">{t('hero.h1.b')}</span>
-          </motion.h1>
-
-          <motion.p variants={item} className="mt-7 text-[16px] md:text-[18px] text-white/75 leading-relaxed max-w-[620px]">
-            {t('hero.sub')}
-          </motion.p>
-
-          <motion.div variants={item} className="mt-10 flex flex-col sm:flex-row gap-3">
-            <MagneticButton href="#booking" className="btn-primary no-underline">
-              {t('hero.cta.primary')}
-              <ArrowRight size={15} />
-            </MagneticButton>
-            <MagneticButton href="#packages" className="btn-ghost no-underline" pullStrength={0.18}>
-              {t('hero.cta.secondary')}
-            </MagneticButton>
-          </motion.div>
-
-          {/* Trust badges */}
-          <motion.div variants={item} className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-[720px]">
-            <TrustTile label={t('hero.trust.years')}   sub={t('hero.trust.years.sub')}   accent />
-            <TrustTile label={<><CountUp to={300} />+</>} sub={t('hero.trust.reviews.sub')} />
-            <TrustTile label={t('hero.trust.guides')}  sub={t('hero.trust.guides.sub')} />
-            <TrustTile label={t('hero.trust.lunch')}   sub={t('hero.trust.lunch.sub')} />
-          </motion.div>
+      {/* Top-left dateline (editorial signature) */}
+      <div className="absolute top-24 left-5 md:left-12 z-10 max-w-[420px]">
+        <motion.div
+          initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="label-caps text-[#67E8F9] mb-2"
+        >
+          {t('hero.locale')}
         </motion.div>
       </div>
 
-      {/* Scroll cue */}
-      {!reduce && (
-        <motion.a href="#trust"
-          aria-label="Scroll"
-          className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5 text-white/55 hover:text-white"
-          initial={{ opacity: 0 }} animate={{ opacity: 0.65 }} transition={{ delay: 1.2, duration: 0.6 }}
+      {/* Headline + CTA block, anchored bottom-left */}
+      <div className="relative w-full max-w-[1320px] mx-auto px-5 md:px-12 pb-20 md:pb-28 z-10">
+        <motion.h1
+          initial={reduce ? {} : { opacity: 0, y: 24 }}
+          animate={reduce ? {} : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className="serif font-medium text-[clamp(48px,9vw,128px)] leading-[0.95] tracking-tight max-w-[1100px]"
         >
-          <span className="text-[10px] uppercase tracking-[0.25em]">{t('hero.scroll')}</span>
-          <motion.span animate={{ y: [0, 6, 0] }} transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}>
-            <ArrowDown size={14} />
-          </motion.span>
-        </motion.a>
-      )}
-    </section>
-  )
-}
+          <span>{t('hero.h1.a')}</span>{' '}<br className="hidden md:block" />
+          <span>{t('hero.h1.b')}</span>{' '}
+          <span className="serif-italic font-light text-[#67E8F9]">{t('hero.h1.italic')}</span>
+        </motion.h1>
 
-function TrustTile({ label, sub, accent }) {
-  return (
-    <div className="glass rounded-xl px-4 py-3">
-      <div className={`font-display font-bold text-[18px] leading-none ${accent ? 'text-gradient' : 'text-white'}`}>
-        {label}
+        <motion.p
+          initial={reduce ? {} : { opacity: 0, y: 16 }}
+          animate={reduce ? {} : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-7 text-[15px] md:text-[17px] leading-relaxed text-[#F1F7FA]/80 max-w-[560px]"
+        >
+          {t('hero.sub')}
+        </motion.p>
+
+        <motion.div
+          initial={reduce ? {} : { opacity: 0, y: 12 }}
+          animate={reduce ? {} : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="mt-9 flex flex-col sm:flex-row items-start gap-4"
+        >
+          <a href="#booking" className="btn-river no-underline">
+            {t('hero.cta')} <ArrowRight size={16} />
+          </a>
+          <a href="#experiences" className="link-arrow on-deep no-underline pr-7">
+            {t('hero.cta.alt')} <ArrowRight size={14} />
+          </a>
+        </motion.div>
       </div>
-      <div className="text-[11px] text-white/55 mt-1.5 leading-tight">{sub}</div>
-    </div>
+
+      {/* Bottom corner marks (editorial trim) */}
+      <span aria-hidden className="absolute bottom-6 right-6 hidden md:block label-caps text-[#F1F7FA]/40">
+        â„– 01 â€” Raft Boys, Konjic
+      </span>
+    </section>
   )
 }

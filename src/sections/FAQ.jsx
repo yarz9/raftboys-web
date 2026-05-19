@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useT } from '@/i18n/useI18n'
@@ -24,7 +24,7 @@ export function FAQ() {
 
         <Reveal delay={0.1} className="mt-12 space-y-2">
           {FAQ_KEYS.map((k, i) => (
-            <div key={k} className="bg-[#0F1F1A] border border-white/8 rounded-xl overflow-hidden">
+            <div key={k} className="bg-[#1E293B] border border-white/8 rounded-xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? -1 : i)}
                 aria-expanded={open === i}
@@ -32,7 +32,7 @@ export function FAQ() {
               >
                 <span className="text-[14px] font-medium text-white">{t(`faq.${k}.q`)}</span>
                 {open === i
-                  ? <Minus size={15} className="text-emerald-400 shrink-0" />
+                  ? <Minus size={15} className="text-sky-400 shrink-0" />
                   : <Plus size={15} className="text-white/40 shrink-0" />}
               </button>
               <AnimatePresence initial={false}>

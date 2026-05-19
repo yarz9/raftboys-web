@@ -1,26 +1,26 @@
-import { MapPin, Mail, Phone, Waves, Heart } from 'lucide-react'
+﻿import { MapPin, Mail, Phone, Waves, Heart } from 'lucide-react'
 import { useT } from '@/i18n/useI18n'
 import { BUSINESS } from '@/data/content'
 
 export function Footer() {
   const t = useT()
   return (
-    <footer className="relative border-t border-white/5 bg-[#06100D]">
+    <footer className="relative border-t border-white/5 bg-[#0F172A]">
       <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-14">
         <div className="grid md:grid-cols-12 gap-10">
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center">
+              <span className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-cyan-500 flex items-center justify-center">
                 <Waves size={16} strokeWidth={2.5} className="text-white" />
               </span>
               <span className="font-display font-bold text-[16px] text-white">{BUSINESS.name}</span>
             </div>
             <p className="text-[13px] text-white/65 leading-relaxed max-w-[360px]">{t('foot.tagline')}</p>
             <div className="mt-5 space-y-2 text-[12.5px] text-white/65">
-              <div className="flex items-center gap-2"><MapPin size={12} className="text-emerald-400" /> {BUSINESS.address}</div>
-              <div className="flex items-center gap-2"><Phone size={12} className="text-emerald-400" /> <a href={`tel:${BUSINESS.phoneRaw}`} className="hover:text-white">{BUSINESS.phone}</a></div>
-              <div className="flex items-center gap-2"><Mail size={12} className="text-emerald-400" /> <a href={`mailto:${BUSINESS.email}`} className="hover:text-white">{BUSINESS.email}</a></div>
+              <div className="flex items-center gap-2"><MapPin size={12} className="text-sky-400" /> {BUSINESS.address}</div>
+              <div className="flex items-center gap-2"><Phone size={12} className="text-sky-400" /> <a href={`tel:${BUSINESS.phoneRaw}`} className="hover:text-white">{BUSINESS.phone}</a></div>
+              <div className="flex items-center gap-2"><Mail size={12} className="text-sky-400" /> <a href={`mailto:${BUSINESS.email}`} className="hover:text-white">{BUSINESS.email}</a></div>
             </div>
           </div>
 
@@ -56,13 +56,13 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <span className="text-[12px] text-white/50">
-            © {new Date().getFullYear()} {BUSINESS.name}. {t('foot.copy')}
+            Â© {new Date().getFullYear()} {BUSINESS.name}. {t('foot.copy')}
           </span>
           <span className="inline-flex items-center gap-1.5 text-[11px] text-white/50">
-            <Heart size={11} className="text-emerald-400" />
+            <Heart size={11} className="text-sky-400" />
             {t('foot.preview')}
             <a href="https://cloz.digital" target="_blank" rel="noopener noreferrer"
-              className="font-semibold text-emerald-400 hover:text-emerald-300 ml-1">cloz.digital</a>
+              className="font-semibold text-sky-400 hover:text-sky-300 ml-1">cloz.digital</a>
           </span>
         </div>
       </div>

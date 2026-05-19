@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useI18n, useT } from '@/i18n/useI18n'
 import { SUPPORTED, LANG_LABELS } from '@/i18n/dictionary'
 import { Menu, X, Waves } from 'lucide-react'
@@ -32,7 +32,7 @@ export function Nav() {
     >
       <div className="max-w-[1280px] mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 text-white font-display font-bold tracking-tight">
-          <span className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center shadow-[0_4px_14px_rgba(16,185,129,0.4)]">
+          <span className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-cyan-500 flex items-center justify-center shadow-[0_4px_14px_rgba(14,165,233,0.4)]">
             <Waves size={16} strokeWidth={2.5} className="text-white" />
           </span>
           <span className="text-[16px]">Raft Boys</span>
@@ -54,7 +54,7 @@ export function Nav() {
               <button key={l} onClick={() => setLang(l)}
                 aria-pressed={lang === l}
                 className={`px-2.5 py-1 rounded-full font-semibold transition-all ${
-                  lang === l ? 'bg-emerald-500 text-white' : 'text-white/60 hover:text-white'
+                  lang === l ? 'bg-sky-500 text-white' : 'text-white/60 hover:text-white'
                 }`}>
                 {LANG_LABELS[l]}
               </button>
@@ -77,7 +77,7 @@ export function Nav() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="fixed inset-0 z-[60] md:hidden bg-[#06100D]/95 backdrop-blur-xl animate-fade-in">
+        <div className="fixed inset-0 z-[60] md:hidden bg-[#0F172A]/95 backdrop-blur-xl animate-fade-in">
           <div className="flex items-center justify-between px-5 h-16">
             <span className="text-white font-display font-bold">Raft Boys</span>
             <button onClick={() => setOpen(false)} className="p-2 text-white/80" aria-label="Close menu">
@@ -96,7 +96,7 @@ export function Nav() {
                 {SUPPORTED.map(l => (
                   <button key={l} onClick={() => setLang(l)}
                     className={`px-3 py-1 rounded-full text-[11px] font-semibold ${
-                      lang === l ? 'bg-emerald-500 text-white' : 'text-white/60'
+                      lang === l ? 'bg-sky-500 text-white' : 'text-white/60'
                     }`}>
                     {LANG_LABELS[l]}
                   </button>
