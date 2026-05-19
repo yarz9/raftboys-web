@@ -249,4 +249,16 @@ export const dictionary = {
   'foot.sign':         { en: 'See you on the river.',                    bcs: 'Vidimo se na rijeci.' },
   'foot.copy':         { en: 'All rights reserved.',                     bcs: 'Sva prava zadržana.' },
   'foot.preview':      { en: 'A concept preview by',                     bcs: 'Koncept preview by' },
+  'foot.business':     { en: 'Raft Boys',                                bcs: 'Raft Boys' },
+  'foot.address':      { en: 'Visit',                                    bcs: 'Posjeti' },
+  'foot.contact':      { en: 'Contact',                                  bcs: 'Kontakt' },
+  'foot.season':       { en: 'Season',                                   bcs: 'Sezona' },
+  'foot.hours':        { en: 'Open daily · April–October',               bcs: 'Otvoreno svaki dan · april–oktobar' },
+
+  // Guide roles + tenure used by content.js
+  'guide.role.lead':   { en: 'Founder · Lead guide',                     bcs: 'Osnivač · Glavni vodič' },
+  'guide.role.senior': { en: 'Senior guide',                             bcs: 'Iskusni vodič' },
+  'guide.years.20':    { en: '20+ seasons on the Neretva',               bcs: '20+ sezona na Neretvi' },
+  'guide.years.12':    { en: '12 seasons on the Neretva',                bcs: '12 sezona na Neretvi' },
+  'guide.years.8':     { en: '8 seasons on the Neretva',                 bcs: '8 sezona na Neretvi' },
 }

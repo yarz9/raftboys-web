@@ -1,69 +1,71 @@
-﻿import { MapPin, Mail, Phone, Waves, Heart } from 'lucide-react'
+import { MapPin, Phone, Mail, Heart } from 'lucide-react'
 import { useT } from '@/i18n/useI18n'
 import { BUSINESS } from '@/data/content'
 
+// Editorial footer — deep navy, serif sign-off, ruled lists.
+
 export function Footer() {
   const t = useT()
+  const year = new Date().getFullYear()
   return (
-    <footer className="relative border-t border-white/5 bg-[#0F172A]">
-      <div className="max-w-[1280px] mx-auto px-5 md:px-8 py-14">
-        <div className="grid md:grid-cols-12 gap-10">
-          {/* Brand */}
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-cyan-500 flex items-center justify-center">
-                <Waves size={16} strokeWidth={2.5} className="text-white" />
-              </span>
-              <span className="font-display font-bold text-[16px] text-white">{BUSINESS.name}</span>
+    <footer className="relative bg-[#0F172A] text-[#F1F7FA]">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"
+        className="block w-full" style={{ height: 80, transform: 'scaleY(-1)' }}>
+        <path d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z" fill="#F1F7FA" />
+      </svg>
+
+      <div className="max-w-[1320px] mx-auto px-5 md:px-12 pt-12 md:pt-20 pb-10">
+        <div className="text-center mb-16 md:mb-20">
+          <div className="label-caps text-[#67E8F9] text-[11px] mb-4">Raft Boys · Est. 1999</div>
+          <p className="serif italic font-light text-[clamp(36px,5.6vw,68px)] leading-[1.05] tracking-tight text-[#F1F7FA] max-w-[900px] mx-auto">
+            {t('foot.sign')}
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-10 md:gap-14 border-t border-[rgba(244,239,230,0.15)] pt-12">
+          <div>
+            <div className="label-caps text-[#67E8F9] text-[10px] mb-4">{t('foot.address')}</div>
+            <div className="serif text-[16px] leading-[1.6] text-[#F1F7FA]/90">
+              <div>{BUSINESS.name}</div>
+              <div className="text-[#F1F7FA]/70 mt-1">{BUSINESS.address}</div>
             </div>
-            <p className="text-[13px] text-white/65 leading-relaxed max-w-[360px]">{t('foot.tagline')}</p>
-            <div className="mt-5 space-y-2 text-[12.5px] text-white/65">
-              <div className="flex items-center gap-2"><MapPin size={12} className="text-sky-400" /> {BUSINESS.address}</div>
-              <div className="flex items-center gap-2"><Phone size={12} className="text-sky-400" /> <a href={`tel:${BUSINESS.phoneRaw}`} className="hover:text-white">{BUSINESS.phone}</a></div>
-              <div className="flex items-center gap-2"><Mail size={12} className="text-sky-400" /> <a href={`mailto:${BUSINESS.email}`} className="hover:text-white">{BUSINESS.email}</a></div>
-            </div>
           </div>
 
-          {/* Nav cols */}
-          <div className="md:col-span-3">
-            <h4 className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-semibold mb-4">{t('nav.experiences')}</h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li><a href="#experiences" className="text-white/70 hover:text-white">{t('exp.rafting.t')}</a></li>
-              <li><a href="#experiences" className="text-white/70 hover:text-white">{t('exp.canoeing.t')}</a></li>
-              <li><a href="#experiences" className="text-white/70 hover:text-white">{t('exp.hiking.t')}</a></li>
-              <li><a href="#experiences" className="text-white/70 hover:text-white">{t('exp.packages.t')}</a></li>
+          <div>
+            <div className="label-caps text-[#67E8F9] text-[10px] mb-4">{t('foot.contact')}</div>
+            <ul className="space-y-2.5 text-[14.5px] text-[#F1F7FA]/85">
+              <li className="flex items-center gap-2.5">
+                <Phone size={13} className="text-[#67E8F9]" />
+                <a href={`tel:${BUSINESS.phoneRaw}`} className="hover:text-white">{BUSINESS.phone}</a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail size={13} className="text-[#67E8F9]" />
+                <a href={`mailto:${BUSINESS.email}`} className="hover:text-white">{BUSINESS.email}</a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <MapPin size={13} className="text-[#67E8F9]" />
+                <a href={BUSINESS.mapsUrl} target="_blank" rel="noopener noreferrer"
+                  className="hover:text-white">Open in Google Maps</a>
+              </li>
             </ul>
           </div>
 
-          <div className="md:col-span-2">
-            <h4 className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-semibold mb-4">{t('nav.packages')}</h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li><a href="#packages" className="text-white/70 hover:text-white">{t('pkg.classic.t')}</a></li>
-              <li><a href="#packages" className="text-white/70 hover:text-white">{t('pkg.premium.t')}</a></li>
-              <li><a href="#packages" className="text-white/70 hover:text-white">{t('pkg.weekend.t')}</a></li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
-            <h4 className="text-[11px] uppercase tracking-[0.15em] text-white/40 font-semibold mb-4">{t('nav.contact')}</h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li><a href="#booking" className="text-white/70 hover:text-white">{t('nav.book')}</a></li>
-              <li><a href="#gallery" className="text-white/70 hover:text-white">{t('nav.gallery')}</a></li>
-              <li><a href="#guides" className="text-white/70 hover:text-white">{t('nav.guides')}</a></li>
-            </ul>
+          <div>
+            <div className="label-caps text-[#67E8F9] text-[10px] mb-4">{t('foot.season')}</div>
+            <p className="serif italic text-[15.5px] text-[#F1F7FA]/80 leading-[1.55]">
+              {t('foot.hours')}
+            </p>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <span className="text-[12px] text-white/50">
-            Â© {new Date().getFullYear()} {BUSINESS.name}. {t('foot.copy')}
-          </span>
-          <span className="inline-flex items-center gap-1.5 text-[11px] text-white/50">
-            <Heart size={11} className="text-sky-400" />
-            {t('foot.preview')}
+        <div className="mt-12 pt-7 border-t border-[rgba(244,239,230,0.10)] flex flex-col md:flex-row items-center justify-between gap-4 text-[12.5px] text-[#F1F7FA]/55">
+          <div>© {year} {BUSINESS.name}. {t('foot.copy')}</div>
+          <div className="flex items-center gap-2">
+            <Heart size={11} className="text-[#67E8F9]" />
+            <span>{t('foot.preview')}</span>
             <a href="https://cloz.digital" target="_blank" rel="noopener noreferrer"
-              className="font-semibold text-sky-400 hover:text-sky-300 ml-1">cloz.digital</a>
-          </span>
+              className="font-semibold text-[#67E8F9] hover:text-white">cloz.digital</a>
+          </div>
         </div>
       </div>
     </footer>

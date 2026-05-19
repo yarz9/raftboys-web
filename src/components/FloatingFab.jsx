@@ -39,7 +39,7 @@ export function FloatingFab() {
       {/* Mobile sticky Book Now */}
       <a
         href="#booking"
-        className={`md:hidden fixed bottom-4 left-4 right-4 z-40 btn-primary justify-center !py-3.5 ${
+        className={`md:hidden fixed bottom-4 left-4 right-4 z-40 btn-river justify-center !py-3.5 ${
           show ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0 pointer-events-none'
         } transition-all`}
       >

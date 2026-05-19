@@ -141,7 +141,7 @@ export function ScrollProgress() {
       style={{ scaleX, transformOrigin: '0% 50%' }}
       className="fixed top-0 left-0 right-0 h-[2px] z-[80] pointer-events-none"
     >
-      <div className="h-full w-full bg-gradient-to-r from-[#10B981] via-[#14B8B4] to-[#06B6D4]" />
+      <div className="h-full w-full bg-gradient-to-r from-[#0EA5E9] via-[#06B6D4] to-[#67E8F9]" />
     </motion.div>
   )
 }

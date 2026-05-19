@@ -17,7 +17,7 @@ export function Guides() {
               <h2 className="serif text-[clamp(34px,5.8vw,72px)] font-medium leading-[1.02] tracking-tight text-white">
                 {t('guides.title')}
               </h2>
-              <p className="serif italic text-[18px] text-white/70 mt-5 max-w-[640px]">{t('guides.sub')}</p>
+              <p className="serif italic text-[18px] text-white/70 mt-5 max-w-[640px]">{t('guides.lead')}</p>
             </div>
           </div>
         </Reveal>
