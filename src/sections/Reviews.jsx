@@ -3,7 +3,7 @@ import { useT } from '@/i18n/useI18n'
 
 // One enormous editorial pull-quote, surrounded by three smaller
 // supporting quotes in the margins. No carousel, no cards, no
-// "300+ five-star reviews" KPI â€” that fact gets a quiet bottom-rail.
+// "300+ five-star reviews" KPI — that fact gets a quiet bottom-rail.
 
 export function Reviews() {
   const t = useT()
@@ -41,7 +41,7 @@ export function Reviews() {
           </figcaption>
         </motion.figure>
 
-        {/* Supporting trio â€” small column blockquotes */}
+        {/* Supporting trio — small column blockquotes */}
         <div className="mt-24 md:mt-32 grid md:grid-cols-3 gap-10 md:gap-14 max-w-[1100px] mx-auto">
           {[
             { q: 'rev.q1', w: 'rev.q1.who' },

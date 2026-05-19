@@ -3,9 +3,9 @@ import { ArrowRight } from 'lucide-react'
 import { useT } from '@/i18n/useI18n'
 import { IMG } from '@/data/assets'
 
-// Hero â€” full-bleed cinematic photo, slow horizontal drift, serif
+// Hero — full-bleed cinematic photo, slow horizontal drift, serif
 // headline with an italic stress word. No magnetic CTAs, no trust
-// tile cluster â€” those move to the editorial intro that follows.
+// tile cluster — those move to the editorial intro that follows.
 
 export function Hero() {
   const t = useT()
@@ -79,7 +79,7 @@ export function Hero() {
 
       {/* Bottom corner marks (editorial trim) */}
       <span aria-hidden className="absolute bottom-6 right-6 hidden md:block label-caps text-[#F1F7FA]/40">
-        â„– 01 â€” Raft Boys, Konjic
+        № 01 — Raft Boys, Konjic
       </span>
     </section>
   )

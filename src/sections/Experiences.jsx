@@ -15,7 +15,7 @@ export function Experiences() {
   return (
     <section id="experiences" className="relative bg-[#F1F7FA] text-[#0F172A] pt-8 pb-24 md:pb-32">
       <div className="max-w-[1320px] mx-auto px-5 md:px-12">
-        {/* Section header â€” editorial, left-aligned */}
+        {/* Section header — editorial, left-aligned */}
         <motion.div
           initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -71,10 +71,10 @@ function FeatureCard({ item, large = false, className = '', t }) {
 
         {/* Top-left index */}
         <span className="absolute top-4 left-4 md:top-5 md:left-5 label-caps text-[#F1F7FA]/90">
-          NÂ° {String(ITEMS.findIndex(i => i.key === item.key) + 1).padStart(2, '0')}
+          N° {String(ITEMS.findIndex(i => i.key === item.key) + 1).padStart(2, '0')}
         </span>
 
-        {/* Bottom block â€” title, body, tags */}
+        {/* Bottom block — title, body, tags */}
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-[#F1F7FA]">
           <h3 className={`serif font-medium leading-[1.05] tracking-tight ${
             large ? 'text-[clamp(28px,4vw,46px)]' : 'text-[clamp(22px,2.4vw,30px)]'
@@ -87,10 +87,10 @@ function FeatureCard({ item, large = false, className = '', t }) {
 
           <div className="mt-5 flex items-center gap-3 flex-wrap">
             <span className="tag on-deep">
-              <span className="serif italic text-[#67E8F9]">âŒ›</span> {item.duration}
+              <span className="serif italic text-[#67E8F9]">⌛</span> {item.duration}
             </span>
             <span className="tag on-deep">
-              <span className="serif italic text-[#67E8F9]">{t('exp.from')}</span> â‚¬{item.priceFrom}
+              <span className="serif italic text-[#67E8F9]">{t('exp.from')}</span> €{item.priceFrom}
             </span>
             <span className="ml-auto inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#F1F7FA] text-[#0F172A] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
               <ArrowUpRight size={15} />

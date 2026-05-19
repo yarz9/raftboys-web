@@ -261,4 +261,36 @@ export const dictionary = {
   'guide.years.20':    { en: '20+ seasons on the Neretva',               bcs: '20+ sezona na Neretvi' },
   'guide.years.12':    { en: '12 seasons on the Neretva',                bcs: '12 sezona na Neretvi' },
   'guide.years.8':     { en: '8 seasons on the Neretva',                 bcs: '8 sezona na Neretvi' },
+
+  // Packages — feature checklist + trust line
+  'pkg.feat.pickup':   { en: 'Pickup from Konjic',           bcs: 'Preuzimanje iz Konjica' },
+  'pkg.feat.gear':     { en: 'Wetsuit, helmet, life jacket', bcs: 'Odijelo, kaciga, prsluk' },
+  'pkg.feat.lunch':    { en: 'Riverside lunch',              bcs: 'Ručak pored rijeke' },
+  'pkg.feat.photos':   { en: 'Photos shared same day',       bcs: 'Fotografije isti dan' },
+  'pkg.feat.briefing': { en: 'Full safety briefing',         bcs: 'Cijeli sigurnosni brifing' },
+  'pkg.feat.private':  { en: 'Private guide',                bcs: 'Privatni vodič' },
+  'pkg.feat.long':     { en: 'Extended canyon section',      bcs: 'Duža dionica kanjona' },
+  'pkg.feat.hike':     { en: 'Prenj mountain hike',          bcs: 'Hodanje po Prenju' },
+  'pkg.feat.lodging':  { en: 'Village lodging, 1 night',     bcs: 'Smještaj u selu, 1 noć' },
+  'pkg.feat.two_meals':{ en: '2 traditional lunches',        bcs: '2 tradicionalna ručka' },
+  'pkg.trust':         { en: 'Free cancellation up to 24 h before',
+                         bcs: 'Besplatno otkazivanje do 24 h prije' },
+  'pkg.featured':      { en: 'Most chosen',                  bcs: 'Najčešće biraju' },
+
+  // Booking — conversion lifts
+  'book.guarantee':    { en: 'Reply within 30 minutes',      bcs: 'Odgovor za 30 minuta' },
+  'book.guarantee.d':  { en: 'A real person, not an autoresponder. We confirm dates the same day during business hours.',
+                         bcs: 'Prava osoba, ne autoresponder. Termine potvrđujemo istog dana u radno vrijeme.' },
+  'book.secure':       { en: 'Secure & no card needed',      bcs: 'Sigurno · bez kartice' },
+  'book.secure.d':     { en: 'We confirm by email and WhatsApp first. Payment happens on the day, in person.',
+                         bcs: 'Potvrđujemo emailom i WhatsAppom. Plaćanje na dan, lično.' },
+  'book.availability': { en: 'Limited spots — peak season',  bcs: 'Ograničena mjesta — sezona' },
+  'book.availability.d':{ en: 'July and August fill up two weeks in advance. Lock your date now.',
+                         bcs: 'Juli i august se popune dvije sedmice unaprijed. Rezervirajte termin.' },
+  'book.or':           { en: 'or',                           bcs: 'ili' },
+
+  // FAQ — micro reassurance
+  'faq.cta':           { en: 'Still curious?',               bcs: 'Imate još pitanja?' },
+  'faq.cta.d':         { en: 'WhatsApp us — we usually reply within a few minutes.',
+                         bcs: 'Pišite nam na WhatsApp — obično odgovorimo u par minuta.' },
 }

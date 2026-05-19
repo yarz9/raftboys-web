@@ -34,12 +34,12 @@ export function Gallery() {
             <div className="label-caps text-[#0284C7]">{t('gal.eyebrow')}</div>
           </div>
           <div className="md:col-span-9">
-            <h2 className="serif text-[clamp(34px,5.8vw,76px)] font-medium leading-[1.02] tracking-tight">
+            <h2 className="serif text-[clamp(36px,6vw,80px)] font-medium leading-[1.02] tracking-tight">
               {t('gal.title')}{' '}
               <span className="serif-italic font-light text-[#0EA5E9]">{t('gal.title.italic')}</span>
             </h2>
             <div className="flex items-end justify-between gap-6 flex-wrap mt-6">
-              <p className="serif italic text-[18px] md:text-[20px] text-[#475569] max-w-[640px] leading-[1.45]">
+              <p className="serif italic text-[19px] md:text-[21px] text-[#334155] max-w-[640px] leading-[1.45]">
                 {t('gal.lead')}
               </p>
               <span className="label-caps text-[#0284C7] text-[11px] tracking-[0.4em]">{t('gal.scroll')}</span>

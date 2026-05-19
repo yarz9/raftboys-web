@@ -19,11 +19,11 @@ export function WhyChoose() {
             <div className="label-caps text-[#475569] mb-2">{t('why.eyebrow')}</div>
           </div>
           <div className="md:col-span-9">
-            <h2 className="serif text-[clamp(34px,5.8vw,76px)] font-medium leading-[1.02] tracking-tight">
+            <h2 className="serif text-[clamp(36px,6vw,80px)] font-medium leading-[1.02] tracking-tight">
               {t('why.title')}{' '}
               <span className="serif-italic font-light text-[#0284C7]">{t('why.title.italic')}</span>
             </h2>
-            <p className="serif italic text-[18px] md:text-[20px] text-[#475569] mt-6 max-w-[640px] leading-[1.45]">
+            <p className="serif italic text-[19px] md:text-[21px] text-[#334155] mt-6 max-w-[640px] leading-[1.45]">
               {t('why.lead')}
             </p>
           </div>
@@ -42,7 +42,7 @@ export function WhyChoose() {
               />
               {/* Caption stripe */}
               <div className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-gradient-to-t from-[#0F172A]/85 to-transparent">
-                <div className="label-caps text-[#67E8F9]">â„– Field shot</div>
+                <div className="label-caps text-[#67E8F9]">№ Field shot</div>
                 <div className="serif italic text-[14px] text-[#F1F7FA]">The light just before the lunch beach</div>
               </div>
             </div>

@@ -51,12 +51,14 @@ html {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: 17px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
+@media (max-width: 768px) { html { font-size: 16px; } }
 body { margin: 0; min-height: 100vh; }
 
 /* Editorial serif defaults */
@@ -122,10 +124,10 @@ input, textarea, select, button { font: inherit; }
 }
 .eyebrow.on-deep { color: var(--color-river-bright); }
 .label-caps {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 11px;
-  letter-spacing: 0.32em;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -134,23 +136,27 @@ input, textarea, select, button { font: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 28px;
+  padding: 17px 30px;
   border-radius: 4px;
   background: var(--color-river);
   color: white;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 14.5px;
   letter-spacing: 0.02em;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 0 8px 24px -10px rgba(14, 165, 233, 0.55);
   transition: background var(--motion-base) var(--ease-curve),
-              transform var(--motion-base) var(--ease-curve);
+              transform var(--motion-base) var(--ease-curve),
+              box-shadow var(--motion-base) var(--ease-curve);
 }
 .btn-river:hover {
   background: var(--color-river-deep);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -12px rgba(2, 132, 199, 0.65);
 }
+.btn-river:active { transform: translateY(0); }
 
 .btn-ink-outline {
   display: inline-flex;

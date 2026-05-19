@@ -30,7 +30,7 @@ export function Itinerary() {
             <div className="label-caps text-[#67E8F9]">{t('itin.eyebrow')}</div>
           </div>
           <div className="md:col-span-9">
-            <h2 className="serif text-[clamp(34px,5.8vw,76px)] font-medium leading-[1.02] tracking-tight">
+            <h2 className="serif text-[clamp(36px,6vw,80px)] font-medium leading-[1.02] tracking-tight">
               {t('itin.title')}{' '}
               <span className="serif-italic font-light text-[#67E8F9]">{t('itin.title.italic')}</span>
             </h2>
