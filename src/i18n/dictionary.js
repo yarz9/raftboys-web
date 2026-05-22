@@ -8,7 +8,7 @@ export const dictionary = {
   'nav.guides':        { en: 'Guides',          bcs: 'Vodiči' },
   'nav.gallery':       { en: 'Field Notes',     bcs: 'Galerija' },
   'nav.packages':      { en: 'Packages',        bcs: 'Paketi' },
-  'nav.book':          { en: 'Reserve',         bcs: 'Rezerviraj' },
+  'nav.book':          { en: 'Book Now',         bcs: 'Rezerviraj sada' },
 
   // ─── Loading ───
   'loading.brand':     { en: 'CLOZ.DIGITAL — A CONCEPT PREVIEW',         bcs: 'CLOZ.DIGITAL — KONCEPT' },
@@ -21,7 +21,7 @@ export const dictionary = {
   'hero.h1.italic':    { en: 'than you remember.',                       bcs: 'kakvog ne pamtite.' },
   'hero.sub':          { en: 'Since 1999, three brothers from Konjic have run small-group rafting expeditions down one of Europe\'s greenest rivers.',
                          bcs: 'Od 1999. godine, tri brata iz Konjica vode male grupe niz jednu od najzelenijih rijeka Evrope.' },
-  'hero.cta':          { en: 'Reserve your trip',                        bcs: 'Rezerviraj' },
+  'hero.cta':          { en: 'Book Now',                                  bcs: 'Rezerviraj sada' },
   'hero.cta.alt':      { en: 'See the river',                            bcs: 'Pogledaj rijeku' },
 
   // ─── Editorial intro (NEW) ───
@@ -145,13 +145,13 @@ export const dictionary = {
   'gal.lead':          { en: 'Shared free with every guest, the day of the trip.', bcs: 'Dijele se besplatno sa svakim gostom, na dan ture.' },
   'gal.scroll':        { en: 'Scroll →',                                 bcs: 'Listaj →' },
 
-  'gal.cap1':          { en: 'A day on the Neretva',                    bcs: 'Dan na Neretvi' },
-  'gal.cap2':          { en: 'On the river with Raft Boys',              bcs: 'Na rijeci s Raft Boys' },
-  'gal.cap3':          { en: 'Through the emerald canyon',               bcs: 'Kroz smaragdni kanjon' },
-  'gal.cap4':          { en: 'After the rapids',                         bcs: 'Nakon brzaca' },
-  'gal.cap5':          { en: 'Where the mountains meet the water',       bcs: 'Gdje planine sreću vodu' },
-  'gal.cap6':          { en: 'Above the canyon, Prenj',                  bcs: 'Iznad kanjona, Prenj' },
-  'gal.cap7':          { en: 'Above the river',                          bcs: 'Iznad rijeke' },
+  'gal.cap1':          { en: 'Joy in the rapids',                        bcs: 'Radost u brzacima' },
+  'gal.cap2':          { en: 'Through the canyon drop',                  bcs: 'Kroz kanjonski pad' },
+  'gal.cap3':          { en: 'The waterfall stop',                       bcs: 'Zaustavljanje kod vodopada' },
+  'gal.cap4':          { en: 'She came back the next summer',            bcs: 'Vratila se sljedećeg ljeta' },
+  'gal.cap5':          { en: 'Lunch on the riverbank',                   bcs: 'Ručak uz rijeku' },
+  'gal.cap6':          { en: 'The calm stretch below the dam',           bcs: 'Mirni dio ispod brane' },
+  'gal.cap7':          { en: 'Five new friends on the Neretva',          bcs: 'Pet novih prijatelja na Neretvi' },
   'gal.cap8':          { en: 'Raft Boys on the Neretva',                 bcs: 'Raft Boys na Neretvi' },
 
   // ─── Packages — real offerings & pricing from raftboys.ba ───
@@ -191,7 +191,7 @@ export const dictionary = {
 
   'pkg.from':          { en: 'From',                                     bcs: 'Od' },
   'pkg.priceOnReq':    { en: 'Contact us',                               bcs: 'Kontaktirajte nas' },
-  'pkg.cta':           { en: 'Reserve this trip',                        bcs: 'Rezerviraj' },
+  'pkg.cta':           { en: 'Book Now',                                  bcs: 'Rezerviraj sada' },
   'pkg.favourite':     { en: 'Most chosen',                              bcs: 'Najčešće biraju' },
 
   // ─── FAQ ───
@@ -219,7 +219,7 @@ export const dictionary = {
                          bcs: '48 sati je dosta van sezone. U julu–augustu, sedmica unaprijed garantuje termin. Last-minute često prolazi — javite se.' },
 
   // ─── Booking ───
-  'book.eyebrow':      { en: 'Reserve your trip',                        bcs: 'Rezerviraj' },
+  'book.eyebrow':      { en: 'Book Now',                                  bcs: 'Rezerviraj sada' },
   'book.title':        { en: 'Tell us when.',                            bcs: 'Recite nam kada.' },
   'book.title.italic': { en: 'We\'ll confirm in minutes.',                bcs: 'Potvrđujemo za nekoliko minuta.' },
   'book.lead':         { en: 'Replies within 30 minutes during business hours. WhatsApp is fastest.', bcs: 'Odgovor u roku od 30 minuta u radno vrijeme. WhatsApp je najbrži.' },
@@ -235,7 +235,7 @@ export const dictionary = {
   'book.f.message':    { en: 'Anything else?',                           bcs: 'Bilo šta drugo?' },
   'book.f.message.ph': { en: 'Group composition, kids on board, special occasion …', bcs: 'Sastav grupe, djeca, posebna prilika …' },
   'book.f.consent':    { en: 'I agree to be contacted about my booking.', bcs: 'Slažem se da budem kontaktiran/a o rezervaciji.' },
-  'book.f.submit':     { en: 'Send the request',                         bcs: 'Pošalji upit' },
+  'book.f.submit':     { en: 'Book Now',                                  bcs: 'Rezerviraj sada' },
   'book.f.sending':    { en: 'Sending …',                                bcs: 'Šaljem …' },
   'book.f.whatsapp':   { en: 'Or message us on WhatsApp',                bcs: 'Ili pišite na WhatsApp' },
 
