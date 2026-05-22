@@ -70,7 +70,7 @@ export function Map() {
 
             <p className="serif italic text-[14px] text-[#64748B] flex items-start gap-2 pt-3 border-t border-[rgba(15,23,42,0.12)]">
               <MapPin size={14} className="text-[#0EA5E9] mt-1 shrink-0" />
-              Free pickup from Konjic centre with every reservation.
+              Džajići bb, 88400 Konjic — on the Neretva river.
             </p>
           </div>
         </div>

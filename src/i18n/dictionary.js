@@ -95,9 +95,9 @@ export const dictionary = {
   'why.certified.t':   { en: 'Certified professionals',                  bcs: 'Certificirani profesionalci' },
   'why.certified.d':   { en: 'IRF-certified guides and Rescue 3 trained staff. Papers refreshed every season. Decades of experience on the same canyon.',
                          bcs: 'IRF-certificirani vodiči i Rescue 3 obučeno osoblje. Papiri obnovljeni svake sezone. Decenije iskustva na istom kanjonu.' },
-  'why.lunch.t':       { en: 'Transport & lunch included',               bcs: 'Prevoz i ručak uključeni' },
-  'why.lunch.d':       { en: 'Free pickup from Konjic centre, gear provided, riverside lunch with grilled meat and homemade salads. Everything covered — no surprises.',
-                         bcs: 'Besplatno preuzimanje iz Konjica, oprema obezbijeđena, ručak pored rijeke s mesom i domaćim salatama. Sve pokriveno — bez iznenađenja.' },
+  'why.lunch.t':       { en: 'Gear & lunch included',                    bcs: 'Oprema i ručak uključeni' },
+  'why.lunch.d':       { en: 'Gear provided, riverside lunch with grilled meat and homemade salads. Everything covered — no surprises.',
+                         bcs: 'Oprema obezbijeđena, ručak pored rijeke s mesom i domaćim salatama. Sve pokriveno — bez iznenađenja.' },
   'why.honest.t':      { en: 'Transparent pricing',                      bcs: 'Transparentne cijene' },
   'why.honest.d':      { en: 'The price you see is the price you pay. From €45 per person, all-in. No upsells on the riverbank.',
                          bcs: 'Cijena koju vidite je cijena koju plaćate. Od 45€ po osobi, sve uključeno. Bez cjenkanja na obali.' },
@@ -161,13 +161,13 @@ export const dictionary = {
   'pkg.eyebrow':       { en: 'Adventures & pricing',                     bcs: 'Avanture i cijene' },
   'pkg.title':         { en: 'Four ways into',                            bcs: 'Četiri ulaza u' },
   'pkg.title.italic':  { en: 'the canyon.',                              bcs: 'kanjon.' },
-  'pkg.lead':          { en: 'Honest prices, lunch on the river, gear and pickup included where shown. No riverbank surprises.',
-                         bcs: 'Iskrene cijene, ručak na rijeci, oprema i prevoz uključeni gdje je naznačeno. Bez iznenađenja na obali.' },
+  'pkg.lead':          { en: 'Honest prices, lunch on the river, gear included where shown. No riverbank surprises.',
+                         bcs: 'Iskrene cijene, ručak na rijeci, oprema uključena gdje je naznačeno. Bez iznenađenja na obali.' },
 
   'pkg.rafting.t':     { en: 'Rafting on the Neretva',                   bcs: 'Rafting Neretvom' },
   'pkg.rafting.dur':   { en: 'Half day · lunch included',                bcs: 'Pola dana · ručak uključen' },
-  'pkg.rafting.inc':   { en: 'Pickup from Konjic · safety briefing · wetsuit + helmet + life jacket · rafting through the canyon · riverside lunch · photos',
-                         bcs: 'Preuzimanje iz Konjica · brifing · odijelo + kaciga + prsluk · rafting kroz kanjon · ručak pored rijeke · fotografije' },
+  'pkg.rafting.inc':   { en: 'Safety briefing · wetsuit + helmet + life jacket · rafting through the canyon · riverside lunch · photos',
+                         bcs: 'Brifing · odijelo + kaciga + prsluk · rafting kroz kanjon · ručak pored rijeke · fotografije' },
   'pkg.rafting.who':   { en: 'For: first-timers, families with kids 10+, casual groups',
                          bcs: 'Za: prvi put, porodice s djecom 10+, opuštene grupe' },
 
@@ -270,8 +270,8 @@ export const dictionary = {
   'map.eyebrow':       { en: 'Find us',                                  bcs: 'Pronađite nas' },
   'map.title':         { en: 'Džajići,',                                 bcs: 'Džajići,' },
   'map.title.italic':  { en: 'just outside Konjic.',                     bcs: 'nadomak Konjica.' },
-  'map.lead':          { en: '1 hour from Sarajevo · 1.5 hours from Mostar · free pickup from Konjic centre.',
-                         bcs: '1 sat od Sarajeva · 1,5 sat od Mostara · besplatno preuzimanje iz centra Konjica.' },
+  'map.lead':          { en: '1 hour from Sarajevo · 1.5 hours from Mostar · on the Neretva river.',
+                         bcs: '1 sat od Sarajeva · 1,5 sat od Mostara · na rijeci Neretvi.' },
   'map.dir':           { en: 'Open in Google Maps',                      bcs: 'Otvori u Google Maps' },
 
   // ─── Footer ───
@@ -292,7 +292,7 @@ export const dictionary = {
   'guide.years.8':     { en: '8 seasons on the Neretva',                 bcs: '8 sezona na Neretvi' },
 
   // Packages — feature checklist + trust line
-  'pkg.feat.pickup':   { en: 'Pickup from Konjic',           bcs: 'Preuzimanje iz Konjica' },
+  'pkg.feat.meetup':   { en: 'Meet at Džajići base',         bcs: 'Sastanak u bazi Džajići' },
   'pkg.feat.gear':     { en: 'Wetsuit, helmet, life jacket', bcs: 'Odijelo, kaciga, prsluk' },
   'pkg.feat.lunch':    { en: 'Riverside lunch',              bcs: 'Ručak pored rijeke' },
   'pkg.feat.photos':   { en: 'Photos shared same day',       bcs: 'Fotografije isti dan' },

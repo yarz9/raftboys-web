@@ -12,7 +12,7 @@ export const BUSINESS = {
   address: 'Džajići bb, 88400 Konjic, Bosnia and Herzegovina',
   hours: 'Open daily · April – October',
   mapsUrl: 'https://maps.app.goo.gl/3YnGLBa49RjFYdga9',
-  geo: { lat: 43.6566, lng: 17.9595 },
+  geo: { lat: 43.6153517, lng: 18.0136973 },
   instagram: 'https://www.instagram.com/rafting.neretva.raftboys/',
   facebook: 'https://www.facebook.com/neretvaraft/',
 }

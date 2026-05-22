@@ -12,7 +12,7 @@ const PACKAGES = [
     priceFrom: 50,
     image: IMG.expRafting,           // whitewater action shot
     featured: true,                  // rafting is their flagship
-    features: ['pickup', 'briefing', 'gear', 'lunch', 'photos'],
+    features: ['meetup', 'briefing', 'gear', 'lunch', 'photos'],
   },
   {
     key: 'short_rafting',
@@ -26,7 +26,7 @@ const PACKAGES = [
     priceFrom: 50,
     image: IMG.expCanoeing,          // canoe / calm-water shot
     featured: false,
-    features: ['pickup', 'briefing', 'gear', 'photos'],
+    features: ['meetup', 'briefing', 'gear', 'photos'],
   },
   {
     key: 'canyoning',
@@ -40,14 +40,14 @@ const PACKAGES = [
     priceFrom: 45,
     image: IMG.expHiking,            // Prenj mountain shot
     featured: false,
-    features: ['pickup', 'briefing', 'hike', 'photos'],
+    features: ['meetup', 'briefing', 'hike', 'photos'],
   },
   {
     key: 'special',
     priceFrom: null,                 // contact for pricing
     image: IMG.expPackages,          // expedition / lifestyle shot
     featured: false,
-    features: ['pickup', 'briefing', 'gear', 'hike', 'lodging', 'two_meals', 'photos'],
+    features: ['meetup', 'briefing', 'gear', 'hike', 'lodging', 'two_meals', 'photos'],
   },
 ]
 
