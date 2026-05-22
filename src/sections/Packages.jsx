@@ -15,11 +15,25 @@ const PACKAGES = [
     features: ['pickup', 'briefing', 'gear', 'lunch', 'photos'],
   },
   {
+    key: 'short_rafting',
+    priceFrom: 35,
+    image: IMG.gallery[1],           // orange raft, full-group action
+    featured: false,
+    features: ['briefing', 'gear'],
+  },
+  {
     key: 'canoe',
     priceFrom: 50,
     image: IMG.expCanoeing,          // canoe / calm-water shot
     featured: false,
     features: ['pickup', 'briefing', 'gear', 'photos'],
+  },
+  {
+    key: 'canyoning',
+    priceFrom: 95,
+    image: IMG.gallery[2],           // group under the waterfall cave
+    featured: false,
+    features: ['briefing', 'gear', 'lunch'],
   },
   {
     key: 'hiking',

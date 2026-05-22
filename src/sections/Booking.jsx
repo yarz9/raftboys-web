@@ -194,7 +194,9 @@ export function Booking() {
                     <Field label={t('book.f.package')}>
                       <select value={state.package} onChange={upd('package')} className={inp}>
                         <option value="rafting">{t('pkg.rafting.t')} — €50</option>
-                        <option value="canoe">{t('pkg.canoe.t')} — €50</option>
+                        <option value="short_rafting">{t('pkg.short_rafting.t')} — €35</option>
+                        <option value="canoe">{t('pkg.canoe.t')} — €50 / €60</option>
+                        <option value="canyoning">{t('pkg.canyoning.t')} — €95</option>
                         <option value="hiking">{t('pkg.hiking.t')} — €45</option>
                         <option value="special">{t('pkg.special.t')} — {t('pkg.priceOnReq')}</option>
                       </select>

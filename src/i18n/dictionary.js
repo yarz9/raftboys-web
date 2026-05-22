@@ -171,12 +171,26 @@ export const dictionary = {
   'pkg.rafting.who':   { en: 'For: first-timers, families with kids 10+, casual groups',
                          bcs: 'Za: prvi put, porodice s djecom 10+, opuštene grupe' },
 
+  'pkg.short_rafting.t':   { en: 'Short Rafting on the Neretva',         bcs: 'Kratki rafting Neretvom' },
+  'pkg.short_rafting.dur': { en: '2 hours · min. age 5 · lunch not included', bcs: '2 sata · min. dob 5 · ručak nije uključen' },
+  'pkg.short_rafting.inc': { en: 'A fast, fun taster — Class II–III rapids with professional guides. Perfect for families, first-timers, or anyone short on time.',
+                              bcs: 'Kratko, zabavno iskustvo — brzaci klase II–III s profesionalnim vodičima. Odlično za porodice, početnike ili one s malo vremena.' },
+  'pkg.short_rafting.who': { en: 'For: families with children 5+, first-timers, short stays',
+                              bcs: 'Za: porodice s djecom 5+, početnike, kratke posjete' },
+
   'pkg.canoe.t':       { en: 'Canoeing on the Neretva',                  bcs: 'Kanu na Neretvi' },
-  'pkg.canoe.dur':     { en: 'Gentle waters · ~2.5 h on water',          bcs: 'Mirne vode · ~2,5 h na vodi' },
+  'pkg.canoe.dur':     { en: 'Full day · 09:00–17:00 · +€10 with lunch', bcs: 'Cijeli dan · 09:00–17:00 · +10€ s ručkom' },
   'pkg.canoe.inc':     { en: 'Equipment + paddle briefing · guided route through the calmer canyon stretch · quiet, photogenic',
                          bcs: 'Oprema + uvodni brifing · vođena ruta kroz mirniji dio kanjona · tiho i fotogenično' },
   'pkg.canoe.who':     { en: 'For: couples, photographers, calmer days out',
                          bcs: 'Za: parove, fotografe, mirnije dane' },
+
+  'pkg.canyoning.t':   { en: 'Canyoning',                                bcs: 'Kanjoning' },
+  'pkg.canyoning.dur': { en: '8 hours · min. age 14 · lunch included',   bcs: '8 sati · min. dob 14 · ručak uključen' },
+  'pkg.canyoning.inc': { en: 'An intense full-day descent through Neretva canyons — abseiling, jumps, and natural slides with certified guides.',
+                         bcs: 'Intenzivan cjelodnevni spust kroz kanjone Neretve — spuštanje užetom, skokovi i prirodni tobogani s certificiranim vodičima.' },
+  'pkg.canyoning.who': { en: 'For: thrill-seekers, adventurous groups, ages 14+',
+                         bcs: 'Za: adrenalinaste grupe, avanturiste, dob 14+' },
 
   'pkg.hiking.t':      { en: 'Hiking on Prenj',                          bcs: 'Hodanje po Prenju' },
   'pkg.hiking.dur':    { en: 'Full day on the mountain',                 bcs: 'Cijeli dan na planini' },
