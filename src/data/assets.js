@@ -13,7 +13,7 @@ export const IMG = {
   // Raft powering through emerald rapids, canyon walls, Neretva logo.
   // Wide portrait orientation — fills the cinematic bleed perfectly.
   heroVideo:   null,
-  heroPoster:  '/IMG_1859.jpg',
+  heroPoster:  '/IMG_2610.JPG',
 
   // ── EXPERIENCES ──
   // Rafting: raft full of guests driving through dramatic whitewater.
@@ -41,7 +41,7 @@ export const IMG = {
     '/IMG_1943.JPG',       // Riverside lunch spread on the wooden deck
     '/07189b51-7e8e-45c7-871f-2ae2fc0f1f18.JPG', // Calm clear water, sunny day
     '/98b1ab3d-f287-4d08-b04a-c6b6673b5d75.JPG', // Group laughing in raft, misty canyon
-    '/IMG_2609.JPG',       // Raft through the rapids, Raft Boys logo visible
+    '/IMG_2610.JPG',       // Homepage hero — replaces IMG_2609
   ],
 
   // ── GUIDES — real team photos from raftboys.ba ──
