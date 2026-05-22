@@ -35,7 +35,7 @@ export function WhyChoose() {
           <div className="md:col-span-5 hidden md:block">
             <div className="sticky-figure frame">
               <img
-                src={IMG.gallery[4]}
+                src={IMG.gallery[2]}
                 alt=""
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"

@@ -13,7 +13,7 @@ const STEPS = [
   { id: 2, key: 'itin.2', image: IMG.gallery[1] },
   { id: 3, key: 'itin.3', image: IMG.gallery[7] },
   { id: 4, key: 'itin.4', image: IMG.expRafting },
-  { id: 5, key: 'itin.5', image: IMG.gallery[2] },
+  { id: 5, key: 'itin.5', image: IMG.gallery[4] },
   { id: 6, key: 'itin.6', image: IMG.gallery[3] },
 ]
 
