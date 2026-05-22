@@ -22,7 +22,7 @@ export function Guides() {
           </div>
         </Reveal>
 
-        <RevealStagger className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <RevealStagger className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
           {GUIDES.map((g) => (
             <RevealItem key={g.name}>
               <div className="group relative rounded-2xl overflow-hidden border border-white/8 bg-[#1E293B] hover-lift">
@@ -36,7 +36,7 @@ export function Guides() {
                   </div>
                 </div>
                 <div className="p-5 border-t border-white/5">
-                  <p className="text-[12px] text-white/70 mb-3">{t(g.yearsKey)}</p>
+                  <p className="text-[12px] text-white/70 mb-3">{t(g.bioKey)}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {g.certs.map(c => (
                       <span key={c} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-semibold bg-white/5 border border-white/10 text-white/75 px-2 py-1 rounded-full">

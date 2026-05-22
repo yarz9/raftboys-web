@@ -29,8 +29,8 @@ export const dictionary = {
   'intro.quote':       { en: 'The Neretva runs greener than the trees that grow above it. It is colder than you think, faster than you expect, and more beautiful than any photograph will admit.',
                          bcs: 'Neretva je zelenija od šume koja raste iznad nje. Hladnija je nego što mislite, brža nego što očekujete, i ljepša nego što bilo koja fotografija priznaje.' },
   'intro.byline':      { en: '— from a guest letter, August 2024',       bcs: '— iz pisma gosta, august 2024.' },
-  'intro.body':        { en: 'For twenty-five summers we have launched the same rafts from the same quiet stretch outside Konjic. The river has not aged. Neither have we, on the days we are on it.',
-                         bcs: 'Dvadeset pet ljeta lansiramo iste raftove iz iste mirne uvale nadomak Konjica. Rijeka ne stari. Ni mi, danima kada smo na njoj.' },
+  'intro.body':        { en: 'For over twenty years we have launched the same rafts from the same quiet stretch outside Konjic. The river has not aged. Neither have we, on the days we are on it.',
+                         bcs: 'Više od dvadeset godina lansiramo iste raftove iz iste mirne uvale nadomak Konjica. Rijeka ne stari. Ni mi, danima kada smo na njoj.' },
 
   // ─── Trust strip (subtle) ───
   'strip.since':       { en: 'Est. 1999',                                bcs: 'Od 1999.' },
@@ -84,23 +84,23 @@ export const dictionary = {
 
   // ─── Why us ───
   'why.eyebrow':       { en: 'Why us',                                   bcs: 'Zašto mi' },
-  'why.title':         { en: 'Twenty-five summers',                      bcs: 'Dvadeset pet ljeta' },
+  'why.title':         { en: 'Over twenty years',                        bcs: 'Više od dvadeset godina' },
   'why.title.italic':  { en: 'on the same water.',                       bcs: 'na istoj vodi.' },
-  'why.lead':          { en: 'There are louder rafting outfits in Bosnia. There are cheaper ones too. We don\'t compete with either — we compete with the river, and only when it\'s in a fair mood.',
-                         bcs: 'Postoje glasnije rafting kompanije u Bosni. Postoje i jeftinije. Mi se ne takmičimo ni s jednima — takmičimo se s rijekom, i to samo kad je raspoložena za poštenu igru.' },
+  'why.lead':          { en: 'Since 1999 we have been running the Neretva. The same guides, the same river, the same obsession with doing it properly.',
+                         bcs: 'Od 1999. vodimo ture po Neretvi. Isti vodiči, ista rijeka, ista opsesija da se sve uradi kako treba.' },
 
   'why.safety.t':      { en: 'Safety, every single time',                bcs: 'Sigurnost, svaki put' },
-  'why.safety.d':      { en: 'Pre-trip briefing without shortcuts, top-grade jackets and helmets, every guide trained in swiftwater rescue. We have never had a serious accident in 25 years.',
-                         bcs: 'Brifing bez prečica, vrhunski prsluci i kacige, svi vodiči obučeni za spašavanje u brzoj vodi. Za 25 godina nismo imali nijednu ozbiljnu nezgodu.' },
-  'why.certified.t':   { en: 'IRF-certified rescue guides',              bcs: 'IRF-certificirani spasioci' },
-  'why.certified.d':   { en: 'International Rafting Federation papers, refreshed every season. Decades of compounding experience on the same canyon.',
-                         bcs: 'Papiri International Rafting Federation, obnovljeni svake sezone. Decenije iskustva na istom kanjonu.' },
-  'why.lunch.t':       { en: 'Lunch is a real meal',                     bcs: 'Ručak je pravi obrok' },
-  'why.lunch.d':       { en: 'Grilled meat, homemade salads, fresh bread from a Konjic baker. Eaten on a beach you couldn\'t find without us.',
-                         bcs: 'Meso s roštilja, domaće salate, svjež hljeb iz konjičke pekare. Jede se na plaži koju bez nas ne biste našli.' },
-  'why.honest.t':      { en: 'Honest, plain pricing',                    bcs: 'Iskrene, jasne cijene' },
-  'why.honest.d':      { en: 'The price you see is the price you pay. No riverbank upsells. No bargaining. No surprise fees.',
-                         bcs: 'Cijena koju vidite je cijena koju plaćate. Bez cjenkanja. Bez iznenađenja.' },
+  'why.safety.d':      { en: 'Full briefing, top-grade life jackets and helmets, every guide trained in swiftwater rescue. Over 20 years — no serious accidents.',
+                         bcs: 'Potpuni brifing, vrhunski prsluci i kacige, svi vodiči obučeni za spašavanje. Više od 20 godina — bez ozbiljnih nezgoda.' },
+  'why.certified.t':   { en: 'Certified professionals',                  bcs: 'Certificirani profesionalci' },
+  'why.certified.d':   { en: 'IRF-certified guides and Rescue 3 trained staff. Papers refreshed every season. Decades of experience on the same canyon.',
+                         bcs: 'IRF-certificirani vodiči i Rescue 3 obučeno osoblje. Papiri obnovljeni svake sezone. Decenije iskustva na istom kanjonu.' },
+  'why.lunch.t':       { en: 'Transport & lunch included',               bcs: 'Prevoz i ručak uključeni' },
+  'why.lunch.d':       { en: 'Free pickup from Konjic centre, gear provided, riverside lunch with grilled meat and homemade salads. Everything covered — no surprises.',
+                         bcs: 'Besplatno preuzimanje iz Konjica, oprema obezbijeđena, ručak pored rijeke s mesom i domaćim salatama. Sve pokriveno — bez iznenađenja.' },
+  'why.honest.t':      { en: 'Transparent pricing',                      bcs: 'Transparentne cijene' },
+  'why.honest.d':      { en: 'The price you see is the price you pay. From €45 per person, all-in. No upsells on the riverbank.',
+                         bcs: 'Cijena koju vidite je cijena koju plaćate. Od 45€ po osobi, sve uključeno. Bez cjenkanja na obali.' },
 
   // ─── Reviews ───
   'rev.eyebrow':       { en: 'Letters from the river',                   bcs: 'Pisma s rijeke' },
@@ -124,19 +124,22 @@ export const dictionary = {
 
   // ─── Guides ───
   'guides.eyebrow':    { en: 'The crew',                                 bcs: 'Posada' },
-  'guides.title':      { en: 'You\'ll know everyone',                    bcs: 'Upoznat ćete sve' },
-  'guides.title.italic':{ en: 'by lunch.',                               bcs: 'do ručka.' },
-  'guides.lead':       { en: 'Same families, same village, same river — for a quarter of a century.',  bcs: 'Iste porodice, isto selo, ista rijeka — već četvrt vijeka.' },
+  'guides.title':      { en: 'Meet the team',                            bcs: 'Upoznajte tim' },
+  'guides.title.italic':{ en: 'behind every trip.',                      bcs: 'iza svake ture.' },
+  'guides.lead':       { en: 'Seven certified professionals from Konjic — same families, same river, for over 20 years.',
+                         bcs: 'Sedam certificiranih profesionalaca iz Konjica — iste porodice, ista rijeka, više od 20 godina.' },
 
-  'guide.k.role':      { en: 'Founder · Lead guide',                     bcs: 'Osnivač · Glavni vodič' },
-  'guide.k.bio':       { en: 'Started Raft Boys in 1999 with two brothers and one inflatable raft. Twenty-five summers later, still in the lead boat every weekend.',
-                         bcs: 'Pokrenuo Raft Boys 1999. s dva brata i jednim raftom. Dvadeset pet ljeta kasnije, još uvijek u prvom čamcu svaki vikend.' },
-  'guide.a.role':      { en: 'Senior guide · Swiftwater rescue',         bcs: 'Iskusni vodič · Spašavanje u brzoj vodi' },
-  'guide.a.bio':       { en: 'Twelve years on the Neretva. Born in Konjic, can read this river\'s mood from the rocks at the bridge.',
-                         bcs: 'Dvanaest godina na Neretvi. Rođen u Konjicu, raspoloženje rijeke čita s kamenja kod mosta.' },
-  'guide.m.role':      { en: 'Senior guide · Mountain leader',           bcs: 'Iskusni vodič · Planinski vodič' },
-  'guide.m.bio':       { en: 'Leads our Prenj hikes when he\'s not in a raft. Knows every spring, every shortcut, every shaded lunch spot.',
-                         bcs: 'Vodi naše ture po Prenju kad nije u raftu. Zna svaki izvor, svaku prečicu, svako sjenovito mjesto za ručak.' },
+  'guide.role.owner':   { en: 'Owner',                                   bcs: 'Vlasnik' },
+  'guide.role.skipper': { en: 'Professional Skipper',                    bcs: 'Profesionalni Skipper' },
+
+  'guide.k.bio':       { en: 'Graduated criminologist, mountain rescuer, Rescue 3 certified. Founded Raft Boys in 1999.',
+                         bcs: 'Diplomovani kriminolog, planinski spasilac, Rescue 3 certifikat. Osnovao Raft Boys 1999.' },
+  'guide.d.bio':       { en: 'History professor and nature enthusiast.',  bcs: 'Profesor historije i ljubitelj prirode.' },
+  'guide.v.bio':       { en: 'Student of criminology and nature enthusiast.', bcs: 'Student kriminologije i ljubitelj prirode.' },
+  'guide.f.bio':       { en: 'Cooking enthusiast.',                      bcs: 'Entuzijast kuhanja.' },
+  'guide.de.bio':      { en: 'Sports professor and competitive rafting representative.', bcs: 'Profesor sporta i takmičarski rafting reprezentativac.' },
+  'guide.am.bio':      { en: 'Civil Engineering student and nature enthusiast.', bcs: 'Student građevinarstva i ljubitelj prirode.' },
+  'guide.h.bio':       { en: 'Electrical Engineering student and nature enthusiast.', bcs: 'Student elektrotehnike i ljubitelj prirode.' },
 
   // ─── Field Notes (gallery) ───
   'gal.eyebrow':       { en: 'Field notes',                              bcs: 'Bilješke s terena' },

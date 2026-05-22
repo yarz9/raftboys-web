@@ -44,10 +44,14 @@ export const IMG = {
     '/IMG_2609.JPG',       // Raft through the rapids, Raft Boys logo visible
   ],
 
-  // ── GUIDES ──
+  // ── GUIDES — real team photos from raftboys.ba ──
   guides: [
-    `${HOST}/2024/06/kerim-bijeli-debeli.png`,
-    `${HOST}/2025/04/kerim-crni-debeli-939x1024.png`,
-    `${HOST}/2025/04/kerim-crni-debeli.png`,
+    `${HOST}/2025/04/kerim-crni-debeli-939x1024.png`,    // Kerim  (Owner)
+    `${HOST}/2025/04/bvbvbvc.png`,                        // Dino   (Skipper)
+    `${HOST}/2025/07/5-1-scaled-e1752833490811.jpg`,      // Velid  (Skipper)
+    '/98b1ab3d-f287-4d08-b04a-c6b6673b5d75.JPG',         // Faruk  (Skipper — no individual photo)
+    `${HOST}/2025/04/4343.png`,                           // Demir  (Skipper)
+    `${HOST}/2025/07/2-1-e1752835094410.jpg`,             // Amil   (Skipper)
+    `${HOST}/2025/08/viber_image_2025-08-13_18-17-49-065-1-e1755103210888.jpg`, // Haris (Skipper)
   ],
 }

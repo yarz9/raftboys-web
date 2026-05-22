@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Heart } from 'lucide-react'
+import { MapPin, Phone, Mail, Heart, Instagram, Facebook } from 'lucide-react'
 import { useT } from '@/i18n/useI18n'
 import { BUSINESS } from '@/data/content'
 
@@ -55,6 +55,18 @@ export function Footer() {
             <p className="serif italic text-[15.5px] text-[#F1F7FA]/80 leading-[1.55]">
               {t('foot.hours')}
             </p>
+            <div className="flex items-center gap-3 mt-5">
+              <a href={BUSINESS.instagram} target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[rgba(244,239,230,0.15)] text-[#F1F7FA]/60 hover:text-white hover:border-[#67E8F9] transition-colors">
+                <Instagram size={15} />
+              </a>
+              <a href={BUSINESS.facebook} target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[rgba(244,239,230,0.15)] text-[#F1F7FA]/60 hover:text-white hover:border-[#67E8F9] transition-colors">
+                <Facebook size={15} />
+              </a>
+            </div>
           </div>
         </div>
 

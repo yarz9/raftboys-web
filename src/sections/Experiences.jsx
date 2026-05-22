@@ -4,10 +4,10 @@ import { useT } from '@/i18n/useI18n'
 import { IMG } from '@/data/assets'
 
 const ITEMS = [
-  { key: 'rafting',   image: IMG.expRafting,   duration: '3.5 h', priceFrom: 65, big: true },
-  { key: 'canoeing',  image: IMG.expCanoeing,  duration: '2.5 h', priceFrom: 45 },
-  { key: 'hiking',    image: IMG.expHiking,    duration: 'Full day', priceFrom: 75 },
-  { key: 'weekend',   image: IMG.expPackages,  duration: '2 days', priceFrom: 180 },
+  { key: 'rafting',   image: IMG.expRafting,   duration: '~4 h',    priceFrom: 50,   big: true },
+  { key: 'canoeing',  image: IMG.expCanoeing,  duration: '~3 h',    priceFrom: 50 },
+  { key: 'hiking',    image: IMG.expHiking,    duration: 'Full day', priceFrom: 45 },
+  { key: 'weekend',   image: IMG.expPackages,  duration: 'Custom',  priceFrom: null },
 ]
 
 export function Experiences() {
@@ -90,7 +90,9 @@ function FeatureCard({ item, large = false, className = '', t }) {
               <span className="serif italic text-[#67E8F9]">⌛</span> {item.duration}
             </span>
             <span className="tag on-deep">
-              <span className="serif italic text-[#67E8F9]">{t('exp.from')}</span> €{item.priceFrom}
+              {item.priceFrom != null
+                ? <><span className="serif italic text-[#67E8F9]">{t('exp.from')}</span> €{item.priceFrom}</>
+                : <span className="serif italic text-[#67E8F9]">{t('pkg.priceOnReq')}</span>}
             </span>
             <span className="ml-auto inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#F1F7FA] text-[#0F172A] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
               <ArrowUpRight size={15} />
